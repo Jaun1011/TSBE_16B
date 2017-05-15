@@ -1,27 +1,27 @@
-#Journal Raspberry PI
+# Journal Raspberry PI
 
 ![](pic/header.png?raw=true)
 
 
-##Intro
+## Intro
 Dies ist ein Journal für das Modul Steuerenungen mit Raspberry PI in der TSBE.
 Das Journal wurde aus experimentellen Gründen mit Markdown gemacht.
 
 
-##11.2.2017:
+## 11.2.2017:
 Heute setzte ich mich mit dem Thema "Internet of Things" auseinander
-###Internet Of Things
+### Internet Of Things
 - F: Was ist Internet of things?
 - A: Verschiedene Geräte in einem Netz welche über dieser gesteuert werden können.
-####Vorteil
+#### Vorteil
 - Von überall erreichbar
 - Bei richtigem Einsatz kann das Leben des Benutzers vereinfacht werden.
 
-####Nachteil
+#### Nachteil
 - Statistisch können damit sehr viele Daten gewonnen werden
 - Der Aspekt Sicherheit wird gerne vernachlässigt
 
-##11.2.2017
+## 11.2.2017
 Folgende Module wurden beim Initialen Setup des Raspberry Pies eingerichtet:
 - WLAN wurde mittels raspi-config eingerichtet
 - Tastatur Layout wurde auf CH-DE umgestellt
@@ -29,14 +29,14 @@ Folgende Module wurden beim Initialen Setup des Raspberry Pies eingerichtet:
 - SSH aktiviert
 - Passwörter wurden neu gesetzt
 
-###Probleme & Lösungen
+### Probleme & Lösungen
 |Problem|Lösung|
 |---|---|
 |SSH loggin zuerst ging nicht -> no access kam als Fehlermeldung | Es wurde ein neuer user angeleget mit welchem das login funktionierte|
 |Remote Desktop konnte keine Verbindung aufbauen | Es musste wie beschrieben das tastaturlayout eingerichtet werden. Zusätzlich musste noch das package vnc4server installiert werden und der xrdp service neu gestartet werden.|
 
 
-###Linux Commands
+### Linux Commands
 Hier werden die wichtigsten Linux Commands kurz aufgelistet
 
     ls -la      // list all directories and files
@@ -48,7 +48,7 @@ Hier werden die wichtigsten Linux Commands kurz aufgelistet
     vim         // editor for editing files
 
 
-##25.2.2017
+## 25.2.2017
 
 ### Linux Security Modul
 Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzugefühgt.
@@ -59,7 +59,7 @@ Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzug
     sudo deluser --force  -remove-home pi
 
 
-###RPI Monitoring
+### RPI Monitoring
 Wurde sachgemäss nach anleitung auf GitHub Repo
 [RPi-Monitor-deb](https://github.com/XavierBerger/RPi-Monitor-deb) installiert.
 
@@ -81,10 +81,10 @@ Für die Installation von ShellInABox folgende Commands ausführen
 Um ShellInABox im RPM einzubinden muss im File /etc/rpimonitor/daemon.conf 
 deamon.shellinabox auf den entsprechenden Port gemappt werden.
 
-##03.3.2017
+## 03.3.2017
 In dieser Übung musste ein Webserver mit FTP auf dem Raspberry Pi installiert werden.
 Es wurde hierbei ein Apache2 Server mit PHP und MySql installiert
-###Installation Webserver 
+### Installation Webserver 
 
 	
 	// Zuerst alle nötigen Module mit apt-get installieren
@@ -99,7 +99,7 @@ Es wurde hierbei ein Apache2 Server mit PHP und MySql installiert
 Anschliessend wurde ein php File mit dem Befehl 
 phpinfo in das Verzeichnis /var/www/html gelegt
 
-###FTP einrichten
+### FTP einrichten
 Als erstes muss FTP installiert werden. 
 
     apt-get install ftp
@@ -128,8 +128,8 @@ Nun müssen noch die Rechte auf dem Ordner www vergeben werden
 
 Darauf achten das man sich im html verzeichnis befindet. 
 
-##6.5.2017 - 12.5.2017 - Tortur mit 1-Wire
-###1-Wire
+## 6.5.2017 - 12.5.2017 - Tortur mit 1-Wire
+### 1-Wire
 
 Beim 1-Wire tauchten diverse Probleme auf:
 1) 1-Wire wurde falsch angeschlossen und brannte durch.
@@ -163,10 +163,10 @@ Dazu musste ich folgende Befehle ausführen:
     apt-get install xfce
 
 
-##13.5.2017
+## 13.5.2017
 Heute habe ich Mathematika und das Kammeramodul des Rapberry eingerichtet
 
-###Mathematika
+### Mathematika
 Mathematika ist eine Software welche in der Wissenschaft zur Berechnung von Formeln genutzt wird.
 
 
@@ -189,7 +189,7 @@ Mit der Plot Funktion können Graphen ausgegeben werden.
     Plot[{funktion},{range}]
     Plot[{x^2},{x,-1,1}]
 
-###Kammera
+### Kammera
 Als erstes musste die Kammera in der Raspberry Config aktiviert werden.
 Danach experimentierte ich mit den gegebenen Befehlen ein wenig herum.
 
@@ -197,7 +197,7 @@ Danach experimentierte ich mit den gegebenen Befehlen ein wenig herum.
     raspistill --nopreview --timeout 1 --quality 50 -o bild.jpg
     raspivid -t 8000 -o video.h264
     
-###Überwachungskammera
+### Überwachungskammera
 Für die Überwachungskammera habe ich selber ein Modul mit NodeJS geschrieben.
 Hierzu habe ich 2 Module geschrieben.
 - Modul 1 gibt eine Statische Website zurück
