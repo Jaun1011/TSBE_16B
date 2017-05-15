@@ -102,7 +102,6 @@ phpinfo in das Verzeichnis /var/www/html gelegt
 Als erstes muss FTP installiert werden. 
 
     $ apt-get install ftp
-    
     $ sudo vim  /etc/proftpd/proftpd.conf
     
 Anschliessend muss die Config folgendermassen angepasst werden: (Am Ende des Files)
