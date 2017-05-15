@@ -72,7 +72,7 @@ Für die Installation von ShellInABox folgende Commands ausführen
     $ apt-get install shellinabox
     $ sudo vim /etc/default/shellinabox       // öffnet configfile
 
-    SHELLINABOX_PORT=19910                  // Im Config File Port ändern
+    SHELLINABOX_PORT=19910                    // Im Config File Port ändern
 
     $ /etc/init.d/shellinabox restart         // für restart des services
 
