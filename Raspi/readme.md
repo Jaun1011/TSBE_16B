@@ -49,7 +49,6 @@ Hier werden die wichtigsten Linux Commands kurz aufgelistet
 
 
 ## 25.2.2017
-
 ### Linux Security Modul
 Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzugefühgt.
 
@@ -85,7 +84,6 @@ In dieser Übung musste ein Webserver mit FTP auf dem Raspberry Pi installiert w
 Es wurde hierbei ein Apache2 Server mit PHP und MySql installiert
 ### Installation Webserver 
 
-	
 	// Zuerst alle nötigen Module mit apt-get installieren
 	$ apt-get install php5
 	$ apt-get install mysql
@@ -115,8 +113,13 @@ Anschliessend muss die Config folgendermassen angepasst werden: (Am Ende des Fil
 Danach muss noch ein neuer User hinzugefügt werden. Damit die Änderungen wirksam werden muss der FTP Servic neu 
 gestartet werden.
 
-    sudo ftpasswd --passwd --name admin --uid 33 --gid 33 --home /var/www/ --shell /bin/false
-    sudo /etc/init.d/proftpd restart 
+    $ sudo ftpasswd --passwd /
+                    --name admin / 
+                    --uid 33  / 
+                    --gid 33 /
+                    --home /var/www/ / 
+                    --shell /bin/false 
+    $ sudo /etc/init.d/proftpd restart 
 
 Nun müssen noch die Rechte auf dem Ordner www vergeben werden
 
