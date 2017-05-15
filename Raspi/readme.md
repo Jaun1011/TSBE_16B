@@ -39,13 +39,13 @@ Folgende Module wurden beim Initialen Setup des Raspberry Pies eingerichtet:
 ### Linux Commands
 Hier werden die wichtigsten Linux Commands kurz aufgelistet
 
-    ls -la      // list all directories and files
-    ifconfig    // shows net interface config
-    ping        // pings to ip or dns
-    python      // starts python shell
-    su          //change user
-    cd          // change directory
-    vim         // editor for editing files
+    $ ls -la      // list all directories and files
+    $ ifconfig    // shows net interface config
+    $ ping        // pings to ip or dns
+    $ python      // starts python shell
+    $ su          //change user
+    $ cd          // change directory
+    $ vim         // editor for editing files
 
 
 ## 25.2.2017
@@ -53,29 +53,28 @@ Hier werden die wichtigsten Linux Commands kurz aufgelistet
 ### Linux Security Modul
 Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzugefühgt.
 
-    sudo adduser inter sudo
+    $ sudo adduser inter sudo
     
-    sudo kill -9 771
-    sudo deluser --force  -remove-home pi
+    $ sudo kill -9 771
+    $ sudo deluser --force  -remove-home pi
 
 
 ### RPI Monitoring
 Wurde sachgemäss nach anleitung auf GitHub Repo
 [RPi-Monitor-deb](https://github.com/XavierBerger/RPi-Monitor-deb) installiert.
 
-    git clone https://github.com/XavierBerger/RPi-Monitor.git
-    make 
-    make install
+    $ git clone https://github.com/XavierBerger/RPi-Monitor.git
+    $ make 
+    $ make install
 
 Für die Installation von ShellInABox folgende Commands ausführen
 
-    apt-get install shellinabox
-    sudo vim /etc/default/shellinabox       // öffnet configfile
+    $ apt-get install shellinabox
+    $ sudo vim /etc/default/shellinabox       // öffnet configfile
 
-    
     SHELLINABOX_PORT=19910                  // Im Config File Port ändern
 
-    /etc/init.d/shellinabox restart         // für restart des services
+    $ /etc/init.d/shellinabox restart         // für restart des services
 
 
 Um ShellInABox im RPM einzubinden muss im File /etc/rpimonitor/daemon.conf 
@@ -88,11 +87,11 @@ Es wurde hierbei ein Apache2 Server mit PHP und MySql installiert
 
 	
 	// Zuerst alle nötigen Module mit apt-get installieren
-	apt-get install php5
-	apt-get install mysql
-	apt-get install php-mysql5 phpmyadmin
+	$ apt-get install php5
+	$ apt-get install mysql
+	$ apt-get install php-mysql5 phpmyadmin
 
-	vim /etc/apache2/apache.conf
+	$ vim /etc/apache2/apache.conf
 	
 	# Include /etc/phpmyadmin/apache.conf -> end of the file
 
@@ -102,9 +101,9 @@ phpinfo in das Verzeichnis /var/www/html gelegt
 ### FTP einrichten
 Als erstes muss FTP installiert werden. 
 
-    apt-get install ftp
+    $ apt-get install ftp
     
-    sudo vim  /etc/proftpd/proftpd.conf
+    $ sudo vim  /etc/proftpd/proftpd.conf
     
 Anschliessend muss die Config folgendermassen angepasst werden: (Am Ende des Files)
 
@@ -122,9 +121,9 @@ gestartet werden.
 
 Nun müssen noch die Rechte auf dem Ordner www vergeben werden
 
-    chmod g+s /var/www
-    chmod 775 /var/www
-    chown -R www-data:www-data /var/www
+    $ chmod g+s /var/www
+    $ chmod 775 /var/www
+    $ chown -R www-data:www-data /var/www
 
 Darauf achten das man sich im html verzeichnis befindet. 
 
@@ -140,7 +139,7 @@ Nach diversen Versuchen wurde eine Verkabelung gefunden, welche schlussendlich f
 
 Danach musste nur noch die Datei /boot/config.txt richtig konfiguriert werden.
 
-    vim /boot/config.txt
+    $ vim /boot/config.txt
     
     // In der Config hinzufügen
     dtoverlay=w1-gpio-pullup
@@ -158,9 +157,9 @@ Danach kann über einen Webbrowser auf die Webapplikation von Openhab zugegriffe
 Zusätzlich habe ich noch ein GUI installiert. (XFCE)
 Dazu musste ich folgende Befehle ausführen:
 
-    sudo su -                   // dirty
-    apt-get install x-org
-    apt-get install xfce
+    $ sudo su -                   // dirty
+    $ apt-get install x-org
+    $ apt-get install xfce
 
 
 ## 13.5.2017
@@ -179,23 +178,23 @@ Mathematische Konstanten können mit Pi oder E ausgegeben werden
 
 Mit Simplify können Therme vereinfacht werden
 
-    Simplify [-12 +5x -2x +2y -1x +3 -4k -31k +9]
+    $ Simplify [-12 +5x -2x +2y -1x +3 -4k -31k +9]
     Out[] = -35k +2(x + y)
 
 Mit Solve können gleichungen aufgelöst werden
 Expand  => können terme auseinander genommen werden
 Mit der Plot Funktion können Graphen ausgegeben werden.
 
-    Plot[{funktion},{range}]
-    Plot[{x^2},{x,-1,1}]
+    $ Plot[{funktion},{range}]
+    $ Plot[{x^2},{x,-1,1}]
 
 ### Kammera
 Als erstes musste die Kammera in der Raspberry Config aktiviert werden.
 Danach experimentierte ich mit den gegebenen Befehlen ein wenig herum.
 
-    raspistill -w 640 -h 480 -o bild.jpg
-    raspistill --nopreview --timeout 1 --quality 50 -o bild.jpg
-    raspivid -t 8000 -o video.h264
+    $ raspistill -w 640 -h 480 -o bild.jpg
+    $ raspistill --nopreview --timeout 1 --quality 50 -o bild.jpg
+    $ raspivid -t 8000 -o video.h264
     
 ### Überwachungskammera
 Für die Überwachungskammera habe ich selber ein Modul mit NodeJS geschrieben.
