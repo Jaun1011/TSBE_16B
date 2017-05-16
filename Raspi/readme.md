@@ -38,33 +38,34 @@ Folgende Module wurden beim Initialen Setup des Raspberry Pies eingerichtet:
 
 ### Linux Commands
 Hier werden die wichtigsten Linux Commands kurz aufgelistet
-
-    $ ls -la      // list all directories and files
-    $ ifconfig    // shows net interface config
-    $ ping        // pings to ip or dns
-    $ python      // starts python shell
-    $ su          //change user
-    $ cd          // change directory
-    $ vim         // editor for editing files
-
+```bash
+    $ ls -la      # list all directories and files
+    $ ifconfig    # shows net interface config
+    $ ping        # pings to ip or dns
+    $ python      # starts python shell
+    $ su          # change user
+    $ cd          # change directory
+    $ vim         # editor for editing files
+```
 
 ## 25.2.2017
 ### Linux Security Modul
 Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzugefühgt.
-
+```bash
     $ sudo adduser inter sudo
-    
     $ sudo kill -9 771
     $ sudo deluser --force  -remove-home pi
-
+```
 
 ### RPI Monitoring
 Wurde sachgemäss nach anleitung auf GitHub Repo
 [RPi-Monitor-deb](https://github.com/XavierBerger/RPi-Monitor-deb) installiert.
 
+```bash
     $ git clone https://github.com/XavierBerger/RPi-Monitor.git
     $ make 
     $ make install
+```
 
 Für die Installation von ShellInABox folgende Commands ausführen
 
