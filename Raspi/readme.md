@@ -149,6 +149,8 @@ Beim 1-Wire tauchten diverse Probleme auf:
 Nach diversen Versuchen wurde eine Verkabelung gefunden, welche schlussendlich funktionierte.
 ![](pic/one-wire.jpeg)
 
+Für die Schaltung wurde  ein 4.8 kOhm Widerstand verwendet.
+
 Danach musste nur noch die Datei /boot/config.txt richtig konfiguriert werden.
 ```bash
 modprobe w1-gpio pullup=1       # Kernel Module laden
