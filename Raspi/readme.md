@@ -2,14 +2,21 @@
 
 ![](pic/header.png?raw=true)
 
-
-## Intro
+##Inhaltsverzeichnis
+1) [Intro](#intro)
+2) [11.2.2017](#d1)
+3) [25.2.2017](#d2)
+4) [03.3.2017](#d3)
+5) [06.5.2017 - 12.5.2017](#d4)
+6) [13.5.2017](#d5)
+    
+## <a name="intro"></a>Intro
 Dies ist ein Journal für das Modul Steuerenungen mit Raspberry PI in der TSBE.
 Das Journal wurde mit Markdown gemacht um mit der Techologie vertrauter zu werden.
 
 
-## 11.2.2017:
-Heute setzte ich mich mit dem Thema "Internet of Things" auseinander
+## <a name="d1"></a>11.2.2017:
+Heute setzte ich mich mit dem Thema "Internet of Things" auseinander. Des weiteren machte ich das initiale Setup des Raspberry Pi
 ### Internet Of Things
 - F: Was ist Internet of things?
 - A: Verschiedene Geräte in einem Netz welche über dieser gesteuert werden können.
@@ -21,7 +28,8 @@ Heute setzte ich mich mit dem Thema "Internet of Things" auseinander
 - Statistisch können damit sehr viele Daten gewonnen werden
 - Der Aspekt Sicherheit wird gerne vernachlässigt
 
-## 11.2.2017
+
+### Setup
 Folgende Module wurden beim Initialen Setup des Raspberry Pies eingerichtet:
 - WLAN wurde mittels raspi-config eingerichtet
 - Tastatur Layout wurde auf CH-DE umgestellt
@@ -48,7 +56,7 @@ $ cd          # change directory
 $ vim         # editor for editing files
 ```
 
-## 25.2.2017
+## <a name="d2"></a>25.2.2017
 ### Linux Security Modul
 Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzugefühgt.
 ```bash
@@ -80,7 +88,7 @@ $ /etc/init.d/shellinabox restart         # für restart des services
 Um ShellInABox im RPM einzubinden muss im File /etc/rpimonitor/daemon.conf 
 deamon.shellinabox auf den entsprechenden Port gemappt werden.
 
-## 03.3.2017
+## <a name="d3"></a>03.3.2017
 In dieser Übung musste ein Webserver mit FTP auf dem Raspberry Pi installiert werden.
 Es wurde hierbei ein Apache2 Server mit PHP und MySql installiert
 ### Installation Webserver 
@@ -131,7 +139,7 @@ Nun müssen noch die Rechte auf dem Ordner www vergeben werden
 ```
 Darauf achten das man sich im html verzeichnis befindet. 
 
-## 6.5.2017 - 12.5.2017 - Tortur mit 1-Wire
+## <a name="d4"></a>6.5.2017 - 12.5.2017 - Tortur mit 1-Wire
 ### 1-Wire
 
 Beim 1-Wire tauchten diverse Probleme auf:
@@ -166,7 +174,7 @@ $ apt-get install x-org
 $ apt-get install xfce
 ```
 
-## 13.5.2017
+## <a name="d5"></a>13.5.2017
 Heute habe ich Mathematika und das Kammeramodul des Rapberry eingerichtet
 
 ### Mathematika
