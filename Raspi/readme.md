@@ -5,7 +5,7 @@
 
 ## Intro
 Dies ist ein Journal für das Modul Steuerenungen mit Raspberry PI in der TSBE.
-Das Journal wurde aus experimentellen Gründen mit Markdown gemacht.
+Das Journal wurde mit Markdown gemacht um mit der Techologie vertrauter zu werden.
 
 
 ## 11.2.2017:
@@ -39,22 +39,22 @@ Folgende Module wurden beim Initialen Setup des Raspberry Pies eingerichtet:
 ### Linux Commands
 Hier werden die wichtigsten Linux Commands kurz aufgelistet
 ```bash
-    $ ls -la      # list all directories and files
-    $ ifconfig    # shows net interface config
-    $ ping        # pings to ip or dns
-    $ python      # starts python shell
-    $ su          # change user
-    $ cd          # change directory
-    $ vim         # editor for editing files
+$ ls -la      # list all directories and files
+$ ifconfig    # shows net interface config
+$ ping        # pings to ip or dns
+$ python      # starts python shell
+$ su          # change user
+$ cd          # change directory
+$ vim         # editor for editing files
 ```
 
 ## 25.2.2017
 ### Linux Security Modul
 Der User pi wurde gelöscht und ein User admin mit sudo Rechten wurde neu hinzugefühgt.
 ```bash
-    $ sudo adduser inter sudo
-    $ sudo kill -9 771
-    $ sudo deluser --force  -remove-home pi
+$ sudo adduser inter sudo
+$ sudo kill -9 771
+$ sudo deluser --force  -remove-home pi
 ```
 
 ### RPI Monitoring
@@ -62,20 +62,20 @@ Wurde sachgemäss nach anleitung auf GitHub Repo
 [RPi-Monitor-deb](https://github.com/XavierBerger/RPi-Monitor-deb) installiert.
 
 ```bash
-    $ git clone https://github.com/XavierBerger/RPi-Monitor.git
-    $ make 
-    $ make install
+$ git clone https://github.com/XavierBerger/RPi-Monitor.git
+$ make 
+$ make install
 ```
 
 Für die Installation von ShellInABox folgende Commands ausführen
+```bash
+$ apt-get install shellinabox
+$ sudo vim /etc/default/shellinabox       # öffnet configfile
+    
+SHELLINABOX_PORT=19910                    # Im Config File Port ändern
 
-    $ apt-get install shellinabox
-    $ sudo vim /etc/default/shellinabox       // öffnet configfile
-
-    SHELLINABOX_PORT=19910                    // Im Config File Port ändern
-
-    $ /etc/init.d/shellinabox restart         // für restart des services
-
+$ /etc/init.d/shellinabox restart         # für restart des services
+```
 
 Um ShellInABox im RPM einzubinden muss im File /etc/rpimonitor/daemon.conf 
 deamon.shellinabox auf den entsprechenden Port gemappt werden.
@@ -85,49 +85,50 @@ In dieser Übung musste ein Webserver mit FTP auf dem Raspberry Pi installiert w
 Es wurde hierbei ein Apache2 Server mit PHP und MySql installiert
 ### Installation Webserver 
 
-	// Zuerst alle nötigen Module mit apt-get installieren
-	$ apt-get install php5
-	$ apt-get install mysql
-	$ apt-get install php-mysql5 phpmyadmin
+```bash
+# Zuerst alle nötigen Module mit apt-get installieren
+$ apt-get install php5
+$ apt-get install mysql
+$ apt-get install php-mysql5 phpmyadmin
 
-	$ vim /etc/apache2/apache.conf
-	
-	# Include /etc/phpmyadmin/apache.conf -> end of the file
+$ vim /etc/apache2/apache.conf
+# Include /etc/phpmyadmin/apache.conf -> end of the file
+```
 
 Anschliessend wurde ein php File mit dem Befehl 
 phpinfo in das Verzeichnis /var/www/html gelegt
 
 ### FTP einrichten
 Als erstes muss FTP installiert werden. 
-
-    $ apt-get install ftp
-    $ sudo vim  /etc/proftpd/proftpd.conf
-    
+```bash
+$ apt-get install ftp
+$ sudo vim  /etc/proftpd/proftpd.conf
+ ```
 Anschliessend muss die Config folgendermassen angepasst werden: (Am Ende des Files)
-
-    DefaultRoot ~
-    AuthOrder mod_auth_file.c  mod_auth_unix.c
-    AuthUserFile /etc/proftpd/ftpd.passwd
-    AuthPAM off
-    RequireValidShell off
-
+```smartyconfig
+ DefaultRoot ~
+ AuthOrder mod_auth_file.c  mod_auth_unix.c
+ AuthUserFile /etc/proftpd/ftpd.passwd
+ AuthPAM off
+ RequireValidShell off
+```
 Danach muss noch ein neuer User hinzugefügt werden. Damit die Änderungen wirksam werden muss der FTP Servic neu 
 gestartet werden.
-
-    $ sudo ftpasswd --passwd /
-                    --name admin / 
-                    --uid 33  / 
-                    --gid 33 /
-                    --home /var/www/ / 
-                    --shell /bin/false 
-    $ sudo /etc/init.d/proftpd restart 
-
+```bash
+ $ sudo ftpasswd --passwd \
+                 --name admin \
+                 --uid 33  \
+                 --gid 33 \
+                 --home /var/www/ \
+                 --shell /bin/false  
+ $ sudo /etc/init.d/proftpd restart 
+```
 Nun müssen noch die Rechte auf dem Ordner www vergeben werden
-
-    $ chmod g+s /var/www
-    $ chmod 775 /var/www
-    $ chown -R www-data:www-data /var/www
-
+```bash
+ $ chmod g+s /var/www
+ $ chmod 775 /var/www
+ $ chown -R www-data:www-data /var/www
+```
 Darauf achten das man sich im html verzeichnis befindet. 
 
 ## 6.5.2017 - 12.5.2017 - Tortur mit 1-Wire
@@ -141,12 +142,12 @@ Nach diversen Versuchen wurde eine Verkabelung gefunden, welche schlussendlich f
 ![](pic/one-wire.jpeg)
 
 Danach musste nur noch die Datei /boot/config.txt richtig konfiguriert werden.
-
-    $ vim /boot/config.txt
+```bash
+$ vim /boot/config.txt
     
-    // In der Config hinzufügen
-    dtoverlay=w1-gpio-pullup
-    
+# In der Config hinzufügen
+dtoverlay=w1-gpio-pullup
+```
 ### OpenHab2
 Um OpenHab zu installieren, muss vom [GitHub](https://github.com/openhab/openhabian/releases) das neuste Image 
 heruntergeladen und installiert werden. Dies kann ganz einfach mit [Etcher](https://etcher.io/) 
@@ -159,11 +160,11 @@ Danach kann über einen Webbrowser auf die Webapplikation von Openhab zugegriffe
 
 Zusätzlich habe ich noch ein GUI installiert. (XFCE)
 Dazu musste ich folgende Befehle ausführen:
-
-    $ sudo su -                   // dirty
-    $ apt-get install x-org
-    $ apt-get install xfce
-
+```bash
+$ sudo su -                   
+$ apt-get install x-org
+$ apt-get install xfce
+```
 
 ## 13.5.2017
 Heute habe ich Mathematika und das Kammeramodul des Rapberry eingerichtet
@@ -171,34 +172,34 @@ Heute habe ich Mathematika und das Kammeramodul des Rapberry eingerichtet
 ### Mathematika
 Mathematika ist eine Software welche in der Wissenschaft zur Berechnung von Formeln genutzt wird.
 
-
-    N[] => numerischer wert 
-
+```haskell
+N[] => numerischer wert 
+````
 Bei nicht vollständiger angabe kann auf der nächsten zeile vortgefahren werden.
 
 Mathematische Konstanten können mit Pi oder E ausgegeben werden
 
 
 Mit Simplify können Therme vereinfacht werden
-
-    $ Simplify [-12 +5x -2x +2y -1x +3 -4k -31k +9]
-    Out[] = -35k +2(x + y)
-
+```haskell
+$ Simplify [-12 +5x -2x +2y -1x +3 -4k -31k +9]
+Out[] = -35k +2(x + y)
+```
 Mit Solve können gleichungen aufgelöst werden
 Expand  => können terme auseinander genommen werden
 Mit der Plot Funktion können Graphen ausgegeben werden.
-
-    $ Plot[{funktion},{range}]
-    $ Plot[{x^2},{x,-1,1}]
-
+```haskell
+$ Plot[{funktion},{range}]
+$ Plot[{x^2},{x,-1,1}]
+```
 ### Kammera
 Als erstes musste die Kammera in der Raspberry Config aktiviert werden.
 Danach experimentierte ich mit den gegebenen Befehlen ein wenig herum.
-
-    $ raspistill -w 640 -h 480 -o bild.jpg
-    $ raspistill --nopreview --timeout 1 --quality 50 -o bild.jpg
-    $ raspivid -t 8000 -o video.h264
-    
+```bash
+$ raspistill -w 640 -h 480 -o bild.jpg
+$ raspistill --nopreview --timeout 1 --quality 50 -o bild.jpg
+$ raspivid -t 8000 -o video.h264
+```
 ### Überwachungskammera
 Für die Überwachungskammera habe ich selber ein Modul mit NodeJS geschrieben.
 Hierzu habe ich 2 Module geschrieben.
