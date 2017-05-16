@@ -151,6 +151,9 @@ Nach diversen Versuchen wurde eine Verkabelung gefunden, welche schlussendlich f
 
 Danach musste nur noch die Datei /boot/config.txt richtig konfiguriert werden.
 ```bash
+modprobe w1-gpio pullup=1       # Kernel Module laden
+modprobe w1-therm
+
 $ vim /boot/config.txt
     
 # In der Config hinzufügen
