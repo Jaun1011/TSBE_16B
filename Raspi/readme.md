@@ -218,8 +218,8 @@ $ raspistill -w 640 -h 480 -o bild.jpg
 $ raspistill --nopreview --timeout 1 --quality 50 -o bild.jpg
 $ raspivid -t 8000 -o video.h264
 ```
-### Überwachungskammera
-Für die Überwachungskammera habe ich selber ein Modul mit NodeJS geschrieben.
+### Überwachungskamera
+Für die Überwachungskamera habe ich selber ein Modul mit NodeJS geschrieben.
 Hierzu habe ich 2 Module geschrieben.
 - Modul 1 gibt eine Statische Website zurück
 - Modul 2 schreibt ein aktuelles Bild in einen Ordner von Modul 1
