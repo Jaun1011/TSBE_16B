@@ -192,6 +192,11 @@ Bei nicht vollständiger angabe kann auf der nächsten zeile vortgefahren werden
 
 Mathematische Konstanten können mit Pi oder E ausgegeben werden
 
+Mit Solve könen Gleichungen aufgelöst werden
+```haskell
+$ Solve [-12 +5x -2x +2y = +3 -4k -31k +9]
+Out[] = -35k +2(x + y)
+```
 
 Mit Simplify können Therme vereinfacht werden
 ```haskell
@@ -205,8 +210,8 @@ Mit der Plot Funktion können Graphen ausgegeben werden.
 $ Plot[{funktion},{range}]
 $ Plot[{x^2},{x,-1,1}]
 ```
-### Kammera
-Als erstes musste die Kammera in der Raspberry Config aktiviert werden.
+### Kamera
+Als erstes musste die Kamera in der Raspberry Config aktiviert werden.
 Danach experimentierte ich mit den gegebenen Befehlen ein wenig herum.
 ```bash
 $ raspistill -w 640 -h 480 -o bild.jpg
