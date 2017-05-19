@@ -231,6 +231,17 @@ $ apt-get install python-dev
 $ apt-get install python-rpi.gpio
 ```
 
+### Webmin
+
+```bash
+$ wget http://prdownloads.sourceforge.net/webadmin/webmin-1.710-minimal.tar.gz
+$ tar -zxvf webmin-1.710-minimal.tar.gz
+```
+
+
+### Cups
+[CUPS Anleitung](https://www.elektronik-kompendium.de/sites/raspberry-pi/2007081.htm)
+
 ## Glossar
 |Begriff|Erklährung|
 |---|---|
