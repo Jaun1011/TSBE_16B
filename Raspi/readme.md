@@ -1,5 +1,4 @@
-# Journal Raspberry PI
-
+# Journal: Wie backt man einen Himbeerkuchen
 ![](pic/header.png?raw=true)
 
 ## Inhaltsverzeichnis
@@ -231,3 +230,13 @@ Die Standart Python Installation reichte jedoch nicht aus. Es mussten noch zwei 
 $ apt-get install python-dev
 $ apt-get install python-rpi.gpio
 ```
+
+## Glossar
+|Begriff|Erklährung|
+|---|---|
+|RPI|Raspberry Pi Interface|
+|Bash| Born against shell: Terminal|
+|Python|Scriptsprache|
+|NodeJS|Scriptsprache|
+|FTP|File Transfer Protocol|
+|1-Wire|Temparatursenson|
