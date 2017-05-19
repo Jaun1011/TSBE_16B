@@ -224,3 +224,10 @@ Hierzu habe ich 2 Module geschrieben.
 - Modul 1 gibt eine Statische Website zurück
 - Modul 2 schreibt ein aktuelles Bild in einen Ordner von Modul 1
 
+### LED Steuerung
+In einem ersten Schritt konnte das LED mit dem Pythonscript angesteuert werden.
+Die Standart Python Installation reichte jedoch nicht aus. Es mussten noch zwei weitere Packete installiert werden.
+```bash
+$ apt-get install python-dev
+$ apt-get install python-rpi.gpio
+```
