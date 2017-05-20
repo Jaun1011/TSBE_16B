@@ -15,7 +15,7 @@ Dies ist ein Journal für das Modul Steuerenungen mit Raspberry PI in der TSBE.
 Das Journal wurde mit Markdown gemacht um mit der Techologie vertrauter zu werden.
 
 
-## <a name="d1"></a>11.2.2017:
+## <a name="d1"></a>11.2.2017
 Heute setzte ich mich mit dem Thema "Internet of Things" auseinander. Des weiteren machte ich das initiale Setup des Raspberry Pi
 ### Internet Of Things
 - F: Was ist Internet of things?
@@ -225,7 +225,7 @@ Hierzu habe ich 2 Module geschrieben.
 - Modul 2 schreibt ein aktuelles Bild in einen Ordner von Modul 1
 
 
-## <a name="d6"></a>19.2.2017:
+## <a name="d6"></a>19.5.2017:
 
 ### LED Steuerung
 In einem ersten Schritt konnte das LED mit dem Pythonscript angesteuert werden.
