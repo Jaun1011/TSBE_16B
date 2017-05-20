@@ -8,6 +8,7 @@
 4) [03.3.2017](#d3)
 5) [06.5.2017 - 12.5.2017](#d4)
 6) [13.5.2017](#d5)
+6) [19.5.2017](#d6)
     
 ## <a name="intro"></a>Intro
 Dies ist ein Journal für das Modul Steuerenungen mit Raspberry PI in der TSBE.
@@ -223,6 +224,9 @@ Hierzu habe ich 2 Module geschrieben.
 - Modul 1 gibt eine Statische Website zurück
 - Modul 2 schreibt ein aktuelles Bild in einen Ordner von Modul 1
 
+
+## <a name="d6"></a>19.2.2017:
+
 ### LED Steuerung
 In einem ersten Schritt konnte das LED mit dem Pythonscript angesteuert werden.
 Die Standart Python Installation reichte jedoch nicht aus. Es mussten noch zwei weitere Packete installiert werden.
@@ -238,9 +242,9 @@ $ wget http://prdownloads.sourceforge.net/webadmin/webmin-1.710-minimal.tar.gz
 $ tar -zxvf webmin-1.710-minimal.tar.gz
 ```
 
-
 ### Cups
-[CUPS Anleitung](https://www.elektronik-kompendium.de/sites/raspberry-pi/2007081.htm)
+Cups wurde nach folgender Anleitung eingerichtet und konfiguriert [CUPS Anleitung](https://www.elektronik-kompendium.de/sites/raspberry-pi/2007081.htm)
+Der Cups Service hört auf den Port 631
 
 ## Glossar
 |Begriff|Erklährung|
@@ -251,3 +255,4 @@ $ tar -zxvf webmin-1.710-minimal.tar.gz
 |NodeJS|Scriptsprache|
 |FTP|File Transfer Protocol|
 |1-Wire|Temparatursenson|
+|CUPS|Printservice|
