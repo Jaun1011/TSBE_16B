@@ -233,7 +233,9 @@ Die Standart Python Installation reichte jedoch nicht aus. Es mussten noch zwei 
 ```bash
 $ apt-get install python-dev
 $ apt-get install python-rpi.gpio
+
 ```
+![](pic/led.jpg?raw=true)
 
 ### Webmin
 
