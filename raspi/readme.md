@@ -248,6 +248,44 @@ $ tar -zxvf webmin-1.710-minimal.tar.gz
 Cups wurde nach folgender Anleitung eingerichtet und konfiguriert [CUPS Anleitung](https://www.elektronik-kompendium.de/sites/raspberry-pi/2007081.htm)
 Der Cups Service hört auf den Port 631
 
+## 21.5.2017
+### NFC
+Als erstes muss in raspi-config unter Interface options das Modul SPI aktiviert werden.
+Danach wurden die Treiber installiert.
+Hierzu habe ich die Treiber per FTP in das Verzeichnis Download gelegt und anschliessend installiert.
+```bash
+$ dpkg -i *
+```
+
+Dieser Command hat einen Fehler produziert, welcher auf [Github](https://github.com/firsttris/mfrc522-rpi/issues/1) gemeldet wurde
+```bash
+$ explorenfc-cardemulation -t test
+```
+Der Command um NFC Karten auszulesen hat funktioniert. 
+```bash
+$ explorenfc-basic –k
+ISO 14*****: *
+ISO 14*****: *
+ISO UID    : *
+```
+Die NFC Karten kann man sehr gut mit Python ansteuern, weshalb wir dies auf dem Raspi noch installieren.
+Die zur Verfügung gestellten Scripts benötigen zusätzlich noch ein Python Modul, welches mit pip installiert werden kann.
+```bash
+$ sudo apt-get install python-dev 
+$ sudo apt-get install python-pip 
+$ pip install nxppy 
+```
+Danach kann das Script read_content.py ausgeführt werden.
+
+Fehler gab es beim Ausführen des read_content.py Files. Anscheinend hat pip das Modul nicht richtig installiert.
+Ansatz PIP funktioniert nicht
+```bash
+$ sudo apt-get purge python-pip python-setuptools
+$ curl -O https://bootstrap.pypa.io/get-pip.py
+$ sudo python get-pip.py
+```
+
+
 ## Glossar
 |Begriff|Erklährung|
 |---|---|
