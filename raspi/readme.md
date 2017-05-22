@@ -283,6 +283,7 @@ Ansatz PIP funktioniert nicht
 $ sudo apt-get purge python-pip python-setuptools
 $ curl -O https://bootstrap.pypa.io/get-pip.py
 $ sudo python get-pip.py
+$ sudo apt-get install cmake            # wird anscheindend für das building verwendet
 ```
 
 
