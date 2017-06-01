@@ -3,26 +3,29 @@ import RPi.GPIO as GPIO
 import re
 
 
-def main()
-	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(11, GPIO.OUT)
-	while 1:
-	    # LED aus
-	    if loadTemparature() <= 23:
-	    	GPIO.output(11, GPIO.HIGH)
-	   	else
-	   		GPIO.output(11, GPIO.LOW)
-	    time.sleep(1)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(11, GPIO.OUT)
+while 1:
+    # LED aus
+    port = 11
+    temp = loadTemparature()
+    if temp > 23:
+        STATE = GPIO.HIGH
+    else
+        STATE = GPIO.LOW
+        break
+    GPIO.output(port, STATE)
+    time.sleep(1)
+
 
 def loadTemparature():
-	value = readFile('/sys/bus/w1/devices/10-000802cfb15d/w1_slave')
+    value = readFile('/sys/bus/w1/devices/10-000802cfb15d/w1_slave')
 	m = re.search('(?t=).*', value)
-	return float(m);
+    return float(m);
 
 def readFile(fileName):
-	f = open(fileName, 'r');
-
-	return f.read()
+    f = open(fileName, 'r');
+    return f.read()
 main()
 
 #/sys/bus/w1/devices/10-000802cfb15d/w1_slave
