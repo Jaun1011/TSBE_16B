@@ -286,6 +286,9 @@ $ sudo python get-pip.py
 $ sudo apt-get install cmake            # wird anscheindend für das building verwendet
 ```
 
+### One Wire mit LED
+![](pic/1wire_led.jpg?raw=true)
+
 
 ## Glossar
 |Begriff|Erklährung|
