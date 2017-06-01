@@ -137,7 +137,7 @@ Nun müssen noch die Rechte auf dem Ordner www vergeben werden
  $ chmod 775 /var/www
  $ chown -R www-data:www-data /var/www
 ```
-Darauf achten das man sich im html verzeichnis befindet. 
+Darauf achten das man sich im html Verzeichnis befindet wenn man ein neues Projekt anlegt. Ansonsten wird das Projekt nicht vom Webserver geroutet. 
 
 ## <a name="d4"></a>6.5.2017 - 12.5.2017 - Tortur mit 1-Wire
 ### 1-Wire
@@ -155,12 +155,21 @@ Danach musste nur noch die Datei /boot/config.txt richtig konfiguriert werden.
 ```bash
 modprobe w1-gpio pullup=1       # Kernel Module laden
 modprobe w1-therm
-
+```
+```bash
 $ vim /boot/config.txt
     
 # In der Config hinzufügen
 dtoverlay=w1-gpio-pullup
 ```
+
+Anschliessend kann mit dem Command die Temparatur ausgelesen werden
+```bash
+$ cat /sys/bus/w1/devices/10-000802cfb15d/w1_slave
+33 00 4b 46 ff ff 02 10 f4 : crc=f4 YES
+33 00 4b 46 ff ff 02 10 f4 t=21612
+```
+
 ### OpenHab2
 Um OpenHab zu installieren, muss vom [GitHub](https://github.com/openhab/openhabian/releases) das neuste Image 
 heruntergeladen und installiert werden. Dies kann ganz einfach mit [Etcher](https://etcher.io/) 
@@ -287,7 +296,13 @@ $ sudo apt-get install cmake            # wird anscheindend für das building ve
 ```
 
 ### One Wire mit LED
+
+Als erstes habe ich den 1Wire Sensor und das LED an die entsprechenden GPIOs gesetzt.
 ![](pic/1wire_led.jpg?raw=true)
+Anschliessend habe ich mit Python ein Script geschrieben, welches das File des Onewires ausliest und checkt ob die Temparatur über 23 Grad ist.
+Wenn Die Bedingung erfüllt ist leuchtet das LED.
+Ansonnsten nicht.
+
 
 
 ## Glossar

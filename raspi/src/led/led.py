@@ -5,6 +5,9 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11, GPIO.OUT)
 while 1:
     # LED aus
+
+
+
     GPIO.output(11, GPIO.LOW)
     # eine Sekunde warten
     time.sleep(1)
