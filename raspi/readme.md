@@ -14,6 +14,7 @@
 Dies ist ein Journal für das Modul Steuerenungen mit Raspberry PI in der TSBE.
 Das Journal wurde mit Markdown gemacht um mit der Techologie vertrauter zu werden.
 
+![](pic/lernmap.jpg?raw=true)
 
 ## <a name="d1"></a>11.2.2017
 Heute setzte ich mich mit dem Thema "Internet of Things" auseinander. Des weiteren machte ich das initiale Setup des Raspberry Pi
