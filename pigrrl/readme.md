@@ -130,7 +130,11 @@ Nach dem Layouten mit Alzium konnte die Platine geätzt werden. Hierbei wurden m
 Beim ersten durchgang war die Natronlauge mit welcher die Printplatte entwickelt wird zu stark und hat die ganze Photoaktive Schicht weggeätzt.
 
 Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
+
 ![](res/leiterplatte.jpeg?raw=true)
+
+Danach konnte die Platine mit den Buttons bestükt und gelötet werden.
+![](res/platte_teile.jpg?raw=true)
 
 ### Zusammenbau <a name="t5-3">
 Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
