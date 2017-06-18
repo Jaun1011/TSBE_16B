@@ -1,5 +1,4 @@
 # PiGRRL
-
 ## Inhaltsverzeichnis
 
 ## Intro
@@ -89,12 +88,26 @@ Auf den Einsatz des Akkus wurde in diesem Teil noch verzichtet.
 ## Printplatte
 Ein wichtiger Punkt des Projekts war es den Entstehungsprozess einer Printplatte nachvollziehen zu können.
 Der Prozess besteht aus mehreren Schritten hier dokumentiert sind.
+Ein sehr grosses Danke schulde ich für diesen Arbeitsschritt einem Mitstudenten, 
+welcher mit der Materie des Printplatten ätzenz bestens vertraut ist. 
+
+Ohne Ihn wäre dieser Arbeitschritt nicht mal ansatzweise möglich gewesen, weil das Fachwissen wie auch das Werkzeug gefehlt hat.
+
+Für alle welche nicht Zugriff auf dies haben empfielt sich, eine fertige [Platte](https://www.adafruit.com/product/3015)
+zu kaufen.
 
 ### Layouting
-Der Schaltplan sowie das Layout der Platine wurde mit Alzium gemacht.
+Das grobbe Layout wurde mit Alzium aus dem vorherigen Schaltplan generiert.
+Danach mussten die Leiterbahnen gezogen werden. Es sieht bei der Platte nicht nach viel aus, 
+kann aber auch hier sehr viel Zeit einnehmen. 
+Eine Schwirigkeit die sich ergeben hat war, dass der Rechte Teil der Platinge mit den linken Pins verbunden werden müssen.
+Hierbei dürfen sich die Leiterbahnen nicht kreuzen. Nach einem halben Nachmittag war dies jedoch auch geschafft.
+
+![](res/layout.png?raw=true)
 
 ### Ätzen
 Nach dem Layouten mit Alzium konnte die Platine geätzt werden
+
 
 ![](res/leiterplatte.jpeg?raw=true)
 
