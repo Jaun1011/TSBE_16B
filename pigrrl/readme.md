@@ -2,12 +2,12 @@
 ## Inhaltsverzeichnis
 
 ## Intro
-Jeder kennt kennt  Ihn, nur wenige wissen wie er funkioniert - der Gameboy.
+Jeder kennt Ihn, nur wenige wissen wie er funktioniert - der Gameboy.
 Mit dem Projekt PiGRRL wollte ich dieser Frage auf den Grund gehen und mir selber einen Gameboy machen.
 Als Basis dient hierzu das Raspberry PI 3.
 
 ## Stückliste
-Folgende Komponenten werden für das PiGRRL benötgt. 
+Folgende Komponenten werden für das PiGRRL benötigt. 
 
 - 10 Tastical Buttons
 - 2 Backbuttos
@@ -20,12 +20,12 @@ Folgende Komponenten werden für das PiGRRL benötgt.
 ![](res/teile.jpg?raw=true)
 
 Der Teilekauf kann wenn man nicht auf das All in One Kit verwendet, 
-ziemlich viel Zeit verschenden diversen Teilen nachzujagen.
+ziemlich viel Zeit verschwenden diversen Teilen nachzujagen.
 Mir passierte es ausserdem, dass ich falsche Teile kaufte.
 
 ### Seiten zum Teile-Kauf:
-- https://de.aliexpress.com/  eignet sich nicht wenn man schnell Teile braucht.
-- https://www.pi-shop.ch/  hat sehr viel Raspberry PI spetzifische Hardware, wie zum Beispiel der Bildschirm.
+- https://de.aliexpress.com/ eignet sich nicht, wenn man schnell Teile braucht.
+- https://www.pi-shop.ch/ hat sehr viel Raspberry PI spezifische Hardware, wie zum Beispiel der Bildschirm.
 - http://www.play-zone.ch/ vor allem elektronische Bauteile. Lieferzeit in der Schweiz beträgt etwa 3 Tage
 - http://www.conrad.ch/ Extrem grosses Angebot und teuer.
 
@@ -34,11 +34,11 @@ Mir passierte es ausserdem, dass ich falsche Teile kaufte.
 Die Installation von [Retropi](https://retropie.org.uk/download/) lief ohne weitere Probleme ab. 
 
 ### Bespielung auf Karte
-Um Retropi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. 
+Um Retro-Pi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. 
 Die Software eignet sich besonders gut dafür.
 
 ### Installation Bildschirmtreiber
-Adafruit bietet ein eigenes Kernelmodul für Retropi an. 
+Adafruit bietet ein eigenes Kernelmodul für Retro-Pi an. 
 Mit diesem kann der Bildschirm und dessen Buttons einfach betrieben werden.
 Die Installation ist hierbei sehr einfach. Man folgt lediglich der
 [PiTFT](https://learn.adafruit.com/running-opengl-based-games-and-emulators-on-adafruit-pitft-displays/pitft-setup)
@@ -51,7 +51,7 @@ Dieser scheint jedoch nach reichlichen Recherchen in diversen Foren nicht mit de
 
 ## Schaltung
 ### Plan
-Der Schaltplan beinhaltet alle Pininterfaces und zu welchen diese verlinkt werden müssen.
+Der Schaltplan beinhaltet alle Pin-Interfaces und zu welchen diese verlinkt werden müssen.
 Weitere Details wie zum Beispiel den Beleuchtungsdruck können findet man [hier](res/PiGrrl.PDF).
 
 ![](res/schaltplan.png?raw=true)
@@ -88,19 +88,19 @@ Auf den Einsatz des Akkus wurde in diesem Teil noch verzichtet.
 ## Printplatte
 Ein wichtiger Punkt des Projekts war es den Entstehungsprozess einer Printplatte nachvollziehen zu können.
 Der Prozess besteht aus mehreren Schritten hier dokumentiert sind.
-Ein sehr grosses Danke schulde ich für diesen Arbeitsschritt einem Mitstudenten, 
-welcher mit der Materie des Printplatten ätzenz bestens vertraut ist. 
+Einen sehr grossen Dank schulde ich für diesen Arbeitsschritt einem Mitstudenten, 
+welcher mit der Materie des Printplatten ätzen bestens vertraut ist. 
 
-Ohne Ihn wäre dieser Arbeitschritt nicht mal ansatzweise möglich gewesen, weil das Fachwissen wie auch das Werkzeug gefehlt hat.
+Ohne Ihn wäre dieser Arbeitsschritt nicht mal ansatzweise möglich gewesen, weil das Fachwissen wie auch das Werkzeug gefehlt hat.
 
-Für alle welche nicht Zugriff auf dies haben empfielt sich, eine fertige [Platte](https://www.adafruit.com/product/3015)
+Für alle welche nicht Zugriff auf dies haben empfiehlt sich, eine fertige [Platte](https://www.adafruit.com/product/3015)
 zu kaufen.
 
 ### Layouting
-Das grobbe Layout wurde mit Alzium aus dem vorherigen Schaltplan generiert.
+Das grobe Layout wurde mit Alzium aus dem vorherigen Schaltplan generiert.
 Danach mussten die Leiterbahnen gezogen werden. Es sieht bei der Platte nicht nach viel aus, 
 kann aber auch hier sehr viel Zeit einnehmen. 
-Eine Schwirigkeit die sich ergeben hat war, dass der Rechte Teil der Platinge mit den linken Pins verbunden werden müssen.
+Eine Schwierigkeit die sich ergeben hat war, dass der Rechte Teil der Platine mit den linken Pins verbunden werden müssen.
 Hierbei dürfen sich die Leiterbahnen nicht kreuzen. Nach einem halben Nachmittag war dies jedoch auch geschafft.
 
 ![](res/layout.png?raw=true)
