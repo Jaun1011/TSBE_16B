@@ -7,7 +7,6 @@ Jeder kennt kennt  Ihn, nur wenige wissen wie er funkioniert - der Gameboy.
 Mit dem Projekt PiGRRL wollte ich dieser Frage auf den Grund gehen und mir selber einen Gameboy machen.
 Als Basis dient hierzu das Raspberry PI 3.
 
-
 ## Stückliste
 Folgende Komponenten werden für das PiGRRL benötgt. 
 
@@ -21,6 +20,17 @@ Folgende Komponenten werden für das PiGRRL benötgt.
 
 ![](pic/teile.jpg?raw=true)
 
+Der Teilekauf kann wenn man nicht auf das All in One Kit verwendet, 
+ziemlich viel Zeit verschenden diversen Teilen nachzujagen.
+Mir passierte es ausserdem, dass ich falsche Teile kaufte.
+
+### Seiten zum Teile-Kauf:
+- https://de.aliexpress.com/  eignet sich nicht wenn man schnell Teile braucht.
+- https://www.pi-shop.ch/  hat sehr viel Raspberry PI spetzifische Hardware, wie zum Beispiel der Bildschirm.
+- http://www.play-zone.ch/ vor allem elektronische Bauteile. Lieferzeit in der Schweiz beträgt etwa 3 Tage
+- http://www.conrad.ch/ Extrem grosses Angebot und teuer.
+
+
 ## Systemkonfiguration
 Die Installation von [Retropi](https://retropie.org.uk/download/) lief ohne weitere Probleme ab. 
 
@@ -28,18 +38,25 @@ Die Installation von [Retropi](https://retropie.org.uk/download/) lief ohne weit
 Um Retropi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. 
 Die Software eignet sich besonders gut dafür.
 
+### Installation Bildschirmtreiber
+Adafruit bietet ein eigenes Kernelmodul für Retropi an. 
+Mit diesem kann der Bildschirm und dessen Buttons einfach betrieben werden.
+Die Installation ist hierbei sehr einfach. Man folgt lediglich der
+[PiTFT](https://learn.adafruit.com/running-opengl-based-games-and-emulators-on-adafruit-pitft-displays/pitft-setup)
+Anleitung von Adafruit.
 
-
+#### Probleme
+Es sollte beim PiGRRL unbedingt darauf geschaut werden, dass der richtige Bildschirm verwendet wird. 
+Ich hatte zuerst den Bildschirm PiTFT 3.5 verwendet. 
+Dieser scheint jedoch nach reichlichen Recherchen in diversen Foren nicht mit dem RetroPi kompatibel zu sein.
 
 ## Schaltplan
+Comming soon
 ### Layouting
 Der Schaltplan sowie das Layout der Platine wurde mit Alzium gemacht.
 ### Protyp
 Zuvor wurde ein noch einen Prototyp auf eine Steckplatine gesetzt und anschliessend an das Raspberry Pi geschalten.
 ![](pic/plain_plate.jpeg?raw=true)
-
-
-
 
 ### Pin Besetzung
 ![](pic/gpios.png?raw=true)
@@ -65,21 +82,24 @@ L|Pin 32|GPIO 12
 R|Pin 33|GPIO 13
 
 
-Im Prototyp wurden die einzelnen Kabel mit eine ein GPIO Kabel verbunden.
+Im Prototyp wurden die einzelnen Kabel mit einem GPIO Kabel verbunden.
+Auf den Einsatz des Akkus wurde in diesem Teil noch verzichtet.
 
 ![](pic/prototyp.jpg?raw=true)
 
 
-
 ## Ätzen
-Nach dem Layouten mit Alzium konnte die Platine geàzt weren
+Nach dem Layouten mit Alzium konnte die Platine geätzt werden
 
-![](pic/leiterplatte.jpeg?raw=true)
 ![](pic/leiterplatte.jpeg?raw=true)
 
 ### Anschluss
 
+
+![](pic/zusammenbau.jpg?raw=true)
+
 ## Inbetriebnahme
+Nun kann man per USB diverse ROMS auf den Gameboy laden
 ## Schlusswort
 # Quellen
 [GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
