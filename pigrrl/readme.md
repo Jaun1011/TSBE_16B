@@ -116,6 +116,7 @@ Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
 Hierbei wurde der feste Stromanschluss durch das Akku Modul von Adafruit ersetzt.
 ![](res/zusammenbau.jpg?raw=true)
+Das Gehäuse wurde von einem Mitstudenten mit einem 3D Drucker gedruckt.
 
 ![](res/final_gameboy.jpg?raw=true)
 
