@@ -1,12 +1,32 @@
 # PiGRRL
+![](res/cartrige.png?raw=true)
 ## Inhaltsverzeichnis
 
-## Intro
+- [Intro](#t1)
+- [Stückliste](#t2)
+    - [Seiten zum Teile-Kauf](#t2-1)
+- [Systemkonfiguration](#t3)
+    - [Bespielung auf Karte](#t3-1)
+    - [Installation Bildschirmtreiber](#t3-2)
+- [Schaltung](#t4)
+    - [Plan](#t4-1)
+    - [Protyp](#t4-2)
+    - [Pin Besetzung](#t4-3)
+- [Printplatte](#t5)
+    - [Layouting](#t5-1)
+    - [Ätzen](#t5-2)
+    - [Zusammenbau](#t5-3)
+- [Schlusswort](#t6)
+    - [Lesson lerned](#t6-1)
+    - [Fazit](#t6-2)
+- [Quellen](#t7)
+
+## Intro <a name="t1">
 Jeder kennt Ihn, nur wenige wissen wie er funktioniert - der Gameboy.
 Mit dem Projekt PiGRRL wollte ich dieser Frage auf den Grund gehen und mir selber einen Gameboy machen.
 Als Basis dient hierzu das Raspberry PI 3.
 
-## Stückliste
+## Stückliste <a name="t2">
 Folgende Komponenten werden für das PiGRRL benötigt. 
 
 - 10 Tastical Buttons
@@ -23,44 +43,44 @@ Der Teilekauf kann, wenn man nicht auf das All in One Kit verwendet,
 ziemlich viel Zeit verschwenden diversen Teilen nachzujagen.
 Mir passierte es ausserdem, dass ich falsche Teile kaufte.
 
-### Seiten zum Teile-Kauf:
+### Seiten zum Teile-Kauf <a name="t2-1">
 - https://de.aliexpress.com/ eignet sich nicht, wenn man schnell Teile braucht.
 - https://www.pi-shop.ch/ hat sehr viel Raspberry PI spezifische Hardware, wie zum Beispiel der Bildschirm.
 - http://www.play-zone.ch/ vor allem elektronische Bauteile. Lieferzeit in der Schweiz beträgt etwa 3 Tage
 - http://www.conrad.ch/ Extrem grosses Angebot und teuer.
 
 
-## Systemkonfiguration
+## Systemkonfiguration <a name="t3">
 Die Installation von [Retro-Pi](https://retropie.org.uk/download/) lief ohne weitere Probleme ab. 
 
-### Bespielung auf Karte
+### Bespielung auf Karte <a name="t3-1">
 Um Retro-Pi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. 
 Die Software eignet sich besonders gut dafür.
 
-### Installation Bildschirmtreiber
+### Installation Bildschirmtreiber <a name="t3-2">
 Adafruit bietet ein eigenes Kernelmodul für Retro-Pi an. 
 Mit diesem kann der Bildschirm und dessen Buttons einfach betrieben werden.
 Die Installation ist hierbei sehr einfach. Man folgt lediglich der
 [PiTFT](https://learn.adafruit.com/running-opengl-based-games-and-emulators-on-adafruit-pitft-displays/pitft-setup)
 Anleitung von Adafruit.
 
-#### Probleme
+#### Probleme <a name="t3-2-1">
 Es sollte beim PiGRRL unbedingt darauf geschaut werden, dass der richtige Bildschirm verwendet wird. 
 Ich hatte zuerst den Bildschirm PiTFT 3.5 verwendet. 
 Dieser scheint jedoch nach reichlichen Recherchen in diversen Foren nicht mit dem RetroPi kompatibel zu sein.
 
-## Schaltung
-### Plan
+## Schaltung <a name="t4">
+### Plan <a name="t4-1">
 Der Schaltplan beinhaltet alle Pin-Interfaces und zu welchen diese verlinkt werden müssen.
 Weitere Details wie zum Beispiel den Beleuchtungsdruck können findet man [hier](res/PiGrrl.PDF).
 
 ![](res/schaltplan.png?raw=true)
 
-### Protyp
+### Protyp <a name="t4-2">
 Zuvor wurde ein noch einen Prototyp auf eine Steckplatine gesetzt und anschliessend an das Raspberry Pi geschalten.
 ![](res/plain_plate.jpeg?raw=true)
 
-### Pin Besetzung
+### Pin Besetzung <a name="t4-3">
 ![](res/gpios.png?raw=true)
 
 Die Knöpfe wurden folgenden GPIO's zugewiesen.
@@ -85,7 +105,7 @@ Im Prototyp wurden die einzelnen Kabel mit einem GPIO Kabel verbunden.
 Auf den Einsatz des Akkus wurde in diesem Teil noch verzichtet.
 
 ![](res/prototyp.jpg?raw=true)
-## Printplatte
+## Printplatte <a name="t5">
 Ein wichtiger Punkt des Projekts war es den Entstehungsprozess einer Printplatte nachvollziehen zu können.
 Der Prozess besteht aus mehreren Schritten hier dokumentiert sind.
 Einen sehr grossen Dank schulde ich für diesen Arbeitsschritt einem Mitstudenten, 
@@ -96,7 +116,7 @@ Ohne Ihn wäre dieser Arbeitsschritt nicht mal ansatzweise möglich gewesen, wei
 Für alle welche nicht Zugriff auf dies haben empfiehlt sich, eine fertige [Platte](https://www.adafruit.com/product/3015)
 zu kaufen.
 
-### Layouting
+### Layouting <a name="t5-1">
 Das grobe Layout wurde mit Alzium aus dem vorherigen Schaltplan generiert.
 Danach mussten die Leiterbahnen gezogen werden. Es sieht bei der Platte nicht nach viel aus, 
 kann aber auch hier sehr viel Zeit einnehmen. 
@@ -105,14 +125,14 @@ Hierbei dürfen sich die Leiterbahnen nicht kreuzen. Nach einem halben Nachmitta
 
 ![](res/layout.png?raw=true)
 
-### Ätzen
+### Ätzen <a name="t5-2">
 Nach dem Layouten mit Alzium konnte die Platine geätzt werden. Hierbei wurden mehrere Anläufe benötigt.
 Beim ersten durchgang war die Natronlauge mit welcher die Printplatte entwickelt wird zu stark und hat die ganze Photoaktive Schicht weggeätzt.
 
 Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 ![](res/leiterplatte.jpeg?raw=true)
 
-### Zusammenbau
+### Zusammenbau <a name="t5-3">
 Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
 Hierbei wurde der feste Stromanschluss durch das Akku Modul von Adafruit ersetzt.
 ![](res/zusammenbau.jpg?raw=true)
@@ -122,16 +142,17 @@ Die Vorlage gibt es [hier](https://www.thingiverse.com/thing:382485).
 
 ![](res/final_gameboy.jpg?raw=true)
 
-## Schlusswort
-### Lesson lerned
+## Schlusswort <a name="t6">
+### Lesson lerned <a name="t6-1">
 Bei der Projektarbeit konnte ich sehr gut nachvollziehen, wie der Herstellungsprozess einer Leiterplatte funktioniert.
 Des Weiteren konnte ich das angeeignete Wissen welches in über das letzte Semester erarbeitet habe anwenden.
 
 Was ich sehr wohl aus der Projektarbeit für weitere IOT Projekte mitnehme ist die verlorene Hemmschwelle vor der Arbeit mit eletronischen Bauteilen.
 
-### Fazit
+### Fazit <a name="t6-2">
 Das Projekt hat mich for Herausvorderungen gestellt, welche ohne Hilfe für mich nicht lösbar gewesen wären.
 Jedoch zeigt dies wieder einmal mehr, dass fragen keine Schande ist. Durch einen guten Know-How Austausch können alle profitieren.
 
-## Quellen
+## Quellen <a name="t7">
 [GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
+[Cartrige Bild](https://www.theverge.com/2016/4/7/11383166/this-hacked-game-boy-hides-a-raspberry-pi-and-hundreds-of-games)
