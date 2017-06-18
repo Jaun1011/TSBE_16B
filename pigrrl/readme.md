@@ -1,5 +1,5 @@
 # PiGRRL
-![](res/cartrige.png?raw=true)
+![](res/cartridge.png?raw=true)
 ## Inhaltsverzeichnis
 
 - [Intro](#t1)
