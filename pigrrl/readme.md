@@ -19,7 +19,7 @@ Folgende Komponenten werden für das PiGRRL benötigt.
 
 ![](res/teile.jpg?raw=true)
 
-Der Teilekauf kann wenn man nicht auf das All in One Kit verwendet, 
+Der Teilekauf kann, wenn man nicht auf das All in One Kit verwendet, 
 ziemlich viel Zeit verschwenden diversen Teilen nachzujagen.
 Mir passierte es ausserdem, dass ich falsche Teile kaufte.
 
@@ -31,7 +31,7 @@ Mir passierte es ausserdem, dass ich falsche Teile kaufte.
 
 
 ## Systemkonfiguration
-Die Installation von [Retropi](https://retropie.org.uk/download/) lief ohne weitere Probleme ab. 
+Die Installation von [Retro-Pi](https://retropie.org.uk/download/) lief ohne weitere Probleme ab. 
 
 ### Bespielung auf Karte
 Um Retro-Pi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. 
@@ -116,13 +116,22 @@ Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
 Hierbei wurde der feste Stromanschluss durch das Akku Modul von Adafruit ersetzt.
 ![](res/zusammenbau.jpg?raw=true)
+
 Das Gehäuse wurde von einem Mitstudenten mit einem 3D Drucker gedruckt.
+Die Vorlage gibt es [hier](https://www.thingiverse.com/thing:382485).
 
 ![](res/final_gameboy.jpg?raw=true)
 
 ## Schlusswort
 ### Lesson lerned
 Bei der Projektarbeit konnte ich sehr gut nachvollziehen, wie der Herstellungsprozess einer Leiterplatte funktioniert.
-Des weiteren konnte ich das Angeeignete Wissen welches in über das letze Semester erabeitet habe anwenden.
+Des Weiteren konnte ich das angeeignete Wissen welches in über das letzte Semester erarbeitet habe anwenden.
+
+Was ich sehr wohl aus der Projektarbeit für weitere IOT Projekte mitnehme ist die verlorene Hemmschwelle vor der Arbeit mit eletronischen Bauteilen.
+
+### Fazit
+Das Projekt hat mich for Herausvorderungen gestellt, welche ohne Hilfe für mich nicht lösbar gewesen wären.
+Jedoch zeigt dies wieder einmal mehr, dass fragen keine Schande ist. Durch einen guten Know-How Austausch können alle profitieren.
+
 ## Quellen
 [GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
