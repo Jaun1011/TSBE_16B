@@ -23,14 +23,47 @@ Folgende Komponenten werden für das PiGRRL benötgt.
 Die Installation von [Retropi](https://retropie.org.uk/download/) lief ohne weitere Probleme ab. 
 
 ### Bespielung auf Karte
-Um Retropi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. Die Software eignet sich besonders gut dafür.
+Um Retropi auf die SD Karte zu spielen wurde [Etcher](https://etcher.io/) verwendet. 
+Die Software eignet sich besonders gut dafür.
+
+
+
 
 ## Schaltplan
 ### Layouting
-Das Layout der Platine wurde mit Alzium gemacht.
+Der Schaltplan sowie das Layout der Platine wurde mit Alzium gemacht.
 ### Protyp
 Zuvor wurde ein noch einen Prototyp auf eine Fertigplatte gesteckt und anschliessend an das Raspberry Pi geschalten.
 ![](pic/plain_plate.jpeg?raw=true)
+
+
+
+
+### Pin Besetzung
+![](pic/gpios.png?raw=true)
+
+Die Knöpfe wurden folgenden GPIO's zugewiesen.
+
+Funktion | Pin | GPIO
+--- | --- | ---
+LEFT|Pin 7 |GPIO 4
+UP|Pin 36|GPIO 16
+RIGHT|Pin 35|GPIO 19
+DOWN|Pin 37|GPIO 26
+ |  |  
+SELECT|Pin 29|GPIO 5
+START|Pin 31|GPIO 6
+ |  |  
+A|Pin 8|GPIO 14
+B|Pin 10|GPIO 15
+X|Pin 38|GPIO 20
+Y|Pin 12|GPIO 18
+ |  |  
+L|Pin 32|GPIO 12
+R|Pin 33|GPIO 13
+
+
+
 
 ### Ätzen
 ![](pic/leiterplatte.jpeg?raw=true)
@@ -40,4 +73,5 @@ Zuvor wurde ein noch einen Prototyp auf eine Fertigplatte gesteckt und anschlies
 
 ## Inbetriebnahme
 ## Schlusswort
-
+# Quellen
+[GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
