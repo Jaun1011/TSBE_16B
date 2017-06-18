@@ -106,18 +106,22 @@ Hierbei dürfen sich die Leiterbahnen nicht kreuzen. Nach einem halben Nachmitta
 ![](res/layout.png?raw=true)
 
 ### Ätzen
-Nach dem Layouten mit Alzium konnte die Platine geätzt werden
+Nach dem Layouten mit Alzium konnte die Platine geätzt werden. Hierbei wurden mehrere Anläufe benötigt.
+Beim ersten durchgang war die Natronlauge mit welcher die Printplatte entwickelt wird zu stark und hat die ganze Photoaktive Schicht weggeätzt.
 
-
+Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 ![](res/leiterplatte.jpeg?raw=true)
 
-### Anschluss
-
-
+### Zusammenbau
+Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
+Hierbei wurde der feste Stromanschluss durch das Akku Modul von Adafruit ersetzt.
 ![](res/zusammenbau.jpg?raw=true)
 
-## Inbetriebnahme
-Nun kann man per USB diverse ROMS auf den Gameboy laden
+![](res/final_gameboy.jpg?raw=true)
+
 ## Schlusswort
-# Quellen
+### Lesson lerned
+Bei der Projektarbeit konnte ich sehr gut nachvollziehen, wie der Herstellungsprozess einer Leiterplatte funktioniert.
+Des weiteren konnte ich das Angeeignete Wissen welches in über das letze Semester erabeitet habe anwenden.
+## Quellen
 [GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
