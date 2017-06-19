@@ -158,5 +158,5 @@ Das Projekt hat mich for Herausvorderungen gestellt, welche ohne Hilfe für mich
 Jedoch zeigt dies wieder einmal mehr, dass fragen keine Schande ist. Durch einen guten Know-How Austausch können alle profitieren.
 
 ## <a name="t7">Quellen
-[GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
-[Cartrige Bild](https://www.theverge.com/2016/4/7/11383166/this-hacked-game-boy-hides-a-raspberry-pi-and-hundreds-of-games)
+- [GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
+- [Cartrige Bild](https://www.theverge.com/2016/4/7/11383166/this-hacked-game-boy-hides-a-raspberry-pi-and-hundreds-of-games)
