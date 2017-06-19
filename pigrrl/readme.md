@@ -44,10 +44,12 @@ ziemlich viel Zeit verschwenden diversen Teilen nachzujagen.
 Mir passierte es ausserdem, dass ich falsche Teile kaufte.
 
 ### <a name="t2-1">Seiten zum Teile-Kauf
-- https://de.aliexpress.com/ eignet sich nicht, wenn man schnell Teile braucht.
-- https://www.pi-shop.ch/ hat sehr viel Raspberry PI spezifische Hardware, wie zum Beispiel der Bildschirm.
-- http://www.play-zone.ch/ vor allem elektronische Bauteile. Lieferzeit in der Schweiz beträgt etwa 3 Tage
-- http://www.conrad.ch/ Extrem grosses Angebot und teuer.
+URL | Anmerkung
+---|---
+https://de.aliexpress.com/ | eignet sich nicht, wenn man schnell Teile braucht.
+https://www.pi-shop.ch/ | hat sehr viel Raspberry PI spezifische Hardware, wie zum Beispiel der Bildschirm.
+http://www.play-zone.ch/ | vor allem elektronische Bauteile. Lieferzeit in der Schweiz beträgt etwa 3 Tage
+http://www.conrad.ch/ | Extrem grosses Angebot und teuer.
 
 
 ## <a name="t3">Systemkonfiguration
