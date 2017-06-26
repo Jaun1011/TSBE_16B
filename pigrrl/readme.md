@@ -156,7 +156,7 @@ Des Weiteren konnte ich das angeeignete Wissen welches in über das letzte Semes
 Was ich sehr wohl aus der Projektarbeit für weitere IOT Projekte mitnehme ist die verlorene Hemmschwelle vor der Arbeit mit eletronischen Bauteilen.
 
 ### <a name="t6-2">Fazit
-Das Projekt hat mich for Herausvorderungen gestellt, welche ohne Hilfe für mich nicht lösbar gewesen wären.
+Das Projekt hat mich vor Herausvorderungen gestellt, welche ohne Hilfe für mich nicht lösbar gewesen wären.
 Jedoch zeigt dies wieder einmal mehr, dass fragen keine Schande ist. Durch einen guten Know-How Austausch können alle profitieren.
 
 ## <a name="t7">Quellen
