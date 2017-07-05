@@ -30,7 +30,7 @@ Als Basis dient hierzu das Raspberry PI 3.
 Folgende Komponenten werden für das PiGRRL benötigt. 
 
 - 10 Tastical Buttons
-- 2 Backbuttos
+- 2 Back-Buttons
 - 1 Adafruite Charger Chip
 - 1 Litium Ionen Akku
 - 1 PiTFT 2.6 Zoll Bildschirm
@@ -122,20 +122,20 @@ zu kaufen.
 Das grobe Layout wurde mit Alzium aus dem vorherigen Schaltplan generiert.
 Danach mussten die Leiterbahnen gezogen werden. Es sieht bei der Platte nicht nach viel aus, 
 kann aber auch hier sehr viel Zeit einnehmen. 
-Eine Schwierigkeit die sich ergeben hat war, dass der Rechte Teil der Platine mit den linken Pins verbunden werden müssen.
+Eine Schwierigkeit die sich ergeben hat war, dass der Rechte Teil der Platine mit den linken Pins verbunden werden muss.
 Hierbei dürfen sich die Leiterbahnen nicht kreuzen. Nach einem halben Nachmittag war dies jedoch auch geschafft.
 
 ![](res/layout.png?raw=true)
 
 ### <a name="t5-2">Ätzen
 Nach dem Layouten mit Alzium konnte die Platine geätzt werden. Hierbei wurden mehrere Anläufe benötigt.
-Beim ersten durchgang war die Natronlauge mit welcher die Printplatte entwickelt wird zu stark und hat die ganze Photoaktive Schicht weggeätzt.
+Beim ersten Durchgang war die Natronlauge mit welcher die Printplatte entwickelt wird zu stark und hat die ganze photoaktive Schicht weggeätzt.
 
 Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 
 ![](res/leiterplatte.jpeg?raw=true)
 
-Danach konnte die Platine mit den Buttons bestükt und gelötet werden.
+Danach konnte die Platine mit den Buttons bestückt und gelötet werden.
 ![](res/platte_teile.jpg?raw=true)
 
 ### <a name="t5-3">Zusammenbau
@@ -149,15 +149,15 @@ Die Vorlage gibt es [hier](https://www.thingiverse.com/thing:382485).
 ![](res/final_gameboy.jpg?raw=true)
 
 ## <a name="t6">Schlusswort
-### <a name="t6-1">Lesson lerned
+### <a name="t6-1">Lessons learned
 Bei der Projektarbeit konnte ich sehr gut nachvollziehen, wie der Herstellungsprozess einer Leiterplatte funktioniert.
 Des Weiteren konnte ich das angeeignete Wissen welches in über das letzte Semester erarbeitet habe anwenden.
 
-Was ich sehr wohl aus der Projektarbeit für weitere IOT Projekte mitnehme ist die verlorene Hemmschwelle vor der Arbeit mit eletronischen Bauteilen.
+Was ich sehr wohl aus der Projektarbeit für weitere IOT Projekte mitnehme ist die verlorene Hemmschwelle vor der Arbeit mit elektronischen Bauteilen.
 
 ### <a name="t6-2">Fazit
-Das Projekt hat mich vor Herausvorderungen gestellt, welche ohne Hilfe für mich nicht lösbar gewesen wären.
-Jedoch zeigt dies wieder einmal mehr, dass fragen keine Schande ist. Durch einen guten Know-How Austausch können alle profitieren.
+Das Projekt hat mich vor Herausforderungen gestellt, welche ohne Hilfe für mich nicht lösbar gewesen wären.
+Jedoch zeigt dies wieder einmal mehr, dass fragen keine Schande ist. Durch einen guten Knowhow Austausch können alle profitieren.
 
 ## <a name="t7">Quellen
 - [GPIO Bild](http://pi4j.com/pins/model-3b-rev1.html)
