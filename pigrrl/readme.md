@@ -122,7 +122,7 @@ zu kaufen.
 Das grobe Layout wurde mit Alzium aus dem vorherigen Schaltplan generiert.
 Danach mussten die Leiterbahnen gezogen werden. Es sieht bei der Platte nicht nach viel aus, 
 kann aber auch hier sehr viel Zeit einnehmen. 
-Eine Schwierigkeit die sich ergeben hat war, dass der Rechte Teil der Platine mit den linken Pins verbunden werden muss.
+Eine Schwierigkeit die sich ergeben hat war, dass der rechte Teil der Platine mit den linken Pins verbunden werden musste.
 Hierbei dürfen sich die Leiterbahnen nicht kreuzen. Nach einem halben Nachmittag war dies jedoch auch geschafft.
 
 ![](res/layout.png?raw=true)
@@ -138,7 +138,7 @@ Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 Danach konnte die Platine mit den Buttons bestückt und gelötet werden.
 ![](res/platte_teile.jpg?raw=true)
 
-### <a name="t5-3">Zusammenbau
+### <a name="t5-3">Zusammenbau§
 Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
 Hierbei wurde der feste Stromanschluss durch das Akku Modul von Adafruit ersetzt.
 ![](res/zusammenbau.jpg?raw=true)
