@@ -138,7 +138,7 @@ Darauf folgten weitere Versuche wobei die Ätzt Flüssigkeit zu stark war.
 Danach konnte die Platine mit den Buttons bestückt und gelötet werden.
 ![](res/platte_teile.jpg?raw=true)
 
-### <a name="t5-3">Zusammenbau§
+### <a name="t5-3">Zusammenbau
 Zu guter Letzt wurden alle Komponenten zusammen verkabelt. 
 Hierbei wurde der feste Stromanschluss durch das Akku Modul von Adafruit ersetzt.
 ![](res/zusammenbau.jpg?raw=true)
