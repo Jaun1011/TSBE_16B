@@ -30,7 +30,6 @@ function AUFGABE_61(){
     //
     var s = W / (m * a);
 
-    console.log("Ausgabe 61");
     console.log("a = " + a);
     console.log("F = " + F + " N");
     console.log("W = " + W + " Nm");
@@ -38,18 +37,62 @@ function AUFGABE_61(){
 }
 
 /**
- * Ein Kran hat einen Elektromotor mit einer Leistungsaufnahme von 9kW um Lasten zu heben.
+ * Ein Kran hat einen Elektromotor mit einer Leistungsaufnahme von 9kW [P] um Lasten zu heben.
  * Welche Masse kann der Kran bei einer Hubgeschwindigkeit von v = 20m/min heben,
  * wenn der Elektromotor einen Wirkungsgrad von 0.9 hat?
+ *
+ * Winkel sind mit _ gemarkt
  */
+
 function AUFGABE_62(){
+    var P = 9000; // Watt
+    var g = 9.08067; // m/s^2
+    var v =  20 / 60;  // m/min
+    var _y = 0.9;// Wirkungsgrad
+
+
+    // _y = Px / P
+    var Px = P * _y; // berechnung der Leistung auf dem Kran
+
+    // Falsch weil wir nich Energie haben
+    // var m = P / 0.5 * v;
+
+
+
+    /**
+     * W = Fg * s  = m * g * s
+     * W = 0.5 * m * v^2 = 0.5 * m * v^2
+     *
+     * Px = m * g * s / t = m * g * v
+     * m = g * v / Px
+     */
+
+    /** Umformung
+     * _y = Px / P
+     * _y = m * g * v  / P
+     *
+     * _y * P  = mgv
+     *
+     * _y * P / g * v = m
+     * m = _y * P / g * v
+     */
+
+    //m = _y * P / g * v
+    var m =  Px / g * v; //solution
+    var m_r = (P * _y) / (g * v);
+
+    // P = 0.5 * m  * v^2
+    console.log("m = " + m + " kg");
+    console.log("m_r = " + m_r + " kg");
+
 
 }
 
 function from_kmh_to_ms(v){
     return v * 1000 / 3600
 }
-
+console.log("Ausgabe 61");
 AUFGABE_61();
+console.log("Ausgabe 62");
 AUFGABE_62();
 
