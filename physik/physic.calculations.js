@@ -45,6 +45,8 @@ function AUFGABE_61(){
  */
 
 function AUFGABE_62(){
+
+
     var P = 9000; // Watt
     var g = 9.08067; // m/s^2
     var v =  20 / 60;  // m/min
@@ -60,21 +62,22 @@ function AUFGABE_62(){
 
 
     /**
-     * W = Fg * s  = m * g * s
-     * W = 0.5 * m * v^2 = 0.5 * m * v^2
-     *
-     * Px = m * g * s / t = m * g * v
-     * m = g * v / Px
+      W = Fg * s  = m * g * s
+      W = 0.5 * m * v^2 = 0.5 * m * v^2
+
+      Px = m * g * s / t = m * g * v
+      m = g * v / Px
      */
 
     /** Umformung
-     * _y = Px / P
-     * _y = m * g * v  / P
-     *
-     * _y * P  = mgv
-     *
-     * _y * P / g * v = m
-     * m = _y * P / g * v
+      _y = Px / P
+      _y = m * g * v  / P
+
+      _y * P  = mgv
+
+      _y * P / g * v = m
+      m = _y * P / g * v
+
      */
 
     //m = _y * P / g * v
@@ -88,11 +91,94 @@ function AUFGABE_62(){
 
 }
 
-function from_kmh_to_ms(v){
-    return v * 1000 / 3600
+/**
+ * Das Tauernkraftwerk nutzt einen Höhenunterschied von 890 m aus und
+ * kann dabei eine elektrische Spitzenleistung von 220 MW abgeben.
+ * Der Wirkungsgrad dieses Kraftwerks beträgt 79 %.
+ *
+ * Berechne den Wasserverbrauch je Stunde!
+ */
+function AUFGABE_63(){
+
+    // Geg
+    var h = 890; // m
+    var Px = 220000; // W
+    var _y = 0.79;
+    var g = 9.08067;
+
+    var P = Px / _y;
+
+
+    /**
+     P = W / t
+     P = F * v
+
+     F = m * g
+
+
+     W = m * g * s
+     W =
+
+     P = m * g * v =  m * g * s / t = m * v / t *
+     */
+    console.log(P);
 }
+
+function test_aufgabe_4() {
+    var g = 9.81;   // m/s^2
+    var m = 18;     // kg
+    var v = 3;      // m/s
+    var s = 30;     // m
+
+
+    var t = s / v;
+
+    var Fg = m * g;
+    var F = m * v/t ;
+
+
+
+
+
+    //var Fr = Fg * _u;
+
+    console.log(Fg);
+    console.log(Fw);
+
+/*
+    * -----> Fw
+---------------
+    |
+    | Fg, Fn
+    v
+* */
+
+    // F = Fv + Fr = Fn *
+    // Fg = m * a
+    // W = m / 2 * v^2
+    // Fg * s = m / 2 * v^2
+    // Fg = m * v^2 / 2 * s
+
+
+
+
+
+}
+
+test_aufgabe_4();
+
+
+function from_kmh_to_ms(v){
+    return v * 1000 / 3600;
+}
+
+
+
+/*
 console.log("Ausgabe 61");
 AUFGABE_61();
 console.log("Ausgabe 62");
 AUFGABE_62();
-
+console.log("Ausgabe 63");
+AUFGABE_63();
+*/
