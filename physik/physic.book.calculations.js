@@ -50,7 +50,7 @@ function A20_U2() {
     
     var h = s * Math.sin(Math.atan(_a));
 
-    console.log(h)
+    console.log(h);
 
 
     var Wg = m * g * h ;
