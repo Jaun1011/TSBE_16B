@@ -5,7 +5,6 @@ public class AufgabeBaum {
 
 
     public static void makeTree(int length, int heigth) {
-        StringBuilder tree = new StringBuilder();
         int widht= 0;
         for (int i = 0; i < length; i++) {
             widht = i + i - 1;
