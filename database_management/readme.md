@@ -1,5 +1,33 @@
 # Datenbank Management
 Im Modul wird mit Oracle DB gearbeitet.
+## Setup
+### Variablen
+Es gibt unter Oracle diverse Systemvariablen welche das System benutzt.
+
+|Name               |Beschreibung                    |
+|-------------------|--------------------------------|
+|${ORACLE_BASE}     |Base Directory von Oracle. Folgende Komponenten liegen unter diesem Verzeichnis: - Softwate- Admin Verzeichnis - {TNS_ADMIN}|
+|${ORACLE_HOME}     |Hier liegt die Oracle Installation.|
+|${ORACLE_SID}      |System ID, ist der eindeutige name der Datenbank Instanz. Kann gesezt werden um auf der Instanz zu arbeiten.|
+|${TNS_ADMIN}       |Ort der Netzwerk Config - Default unter  ${ORACLE_HOME}/network/admin |
+
+Alle Variablen sind Case Sensitiv
+
+
+### Oracle Versionen
+Es ist durchaus üblich mehrere Versionen von Oracle auf dem gleichen Server zu betreiben.
+
+### oratab
+
+
+Unter oratab wrden die existierenden Datenbanken abgelegt.
+oratab liegt unter /etc/
+Das Format von oratab sieht folgendermassen aus:
+``` bash
+${ORACLE_SID}:${ORACLE_HOME}:[Y|N]
+```
+[Y][N] Definiert hierbei ob die Datenbank beim Starten des Hosts ebenfalls gestartet werden soll.
+
 
 ## SQL Grundlagen
 Ein Statement muss immer mit einem Semikolon abgeschlossen werden.
