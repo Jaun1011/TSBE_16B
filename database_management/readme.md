@@ -23,10 +23,23 @@ Bei Mehrfachausführen von Queries können Parameter gesetzt werden.
 
 #### Abfrageoperationen
 
-SELECT
+
 Dient zur Abfrage von Daten.
 ``` SQL
-SELECT * FROM benutzer WHERE 1=1;
+SELECT name, vormame
+FROM benutzer 
+WHERE 1=1
+GROUP BY
+HAVING ...
+UNION ...;
+```
+
+SELECT DISTINCT gibt nur die Differenz der unterschiedlichen Zeilen zurück
+
+``` SQL
+SELECT name, vormame
+FROM benutzer 
+WHERE name like "hans" OR vorname like "fritz";
 ```
 
 #### Manipulationsoperationen
