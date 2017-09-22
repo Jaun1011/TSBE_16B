@@ -10,9 +10,29 @@ Es gibt unter Oracle diverse Systemvariablen welche das System benutzt.
 |${ORACLE_HOME}     |Hier liegt die Oracle Installation.|
 |${ORACLE_SID}      |System ID, ist der eindeutige name der Datenbank Instanz. Kann gesezt werden um auf der Instanz zu arbeiten.|
 |${TNS_ADMIN}       |Ort der Netzwerk Config - Default unter  ${ORACLE_HOME}/network/admin |
+|Oracle Incentory   |Liegt default in ${ORACLE_HOME}/oraInventory. Es ist möglich mehrere Infentories pro Host zu haben. Config File ist in {ORACLE_HOME}/oraInst.loc abgelegt|
 
 Alle Variablen sind Case Sensitiv
 
+### OFA Optimal Flexible Architecture
+Richtlinie zur ablage von Files in Oracle DB
+Die Dokumentation ist unter 
+/u01/app/oracle/local/dba/doc/ofa4.pdf zu finden.
+
+
+-   /u01
+    - /app
+        - /oraInventory         -> Inventory
+        - /oracle               -> ORACLE_BASE
+            - /prduct           -> ORACLE Installation
+            - /admin            -> Basis Directory für Instazspefischie Direcotries
+            - /network
+                - /admin        -> TNS_ADMIN
+                - /log          -> SQlNet Logs
+                - /trace        -> SQlNet Trace Files
+            - /diag
+            
+            
 
 ### Oracle Versionen
 Es ist durchaus üblich mehrere Versionen von Oracle auf dem gleichen Server zu betreiben.
