@@ -125,6 +125,7 @@ function AUFGABE_63(){
 }
 
 function test_aufgabe_4() {
+
     var g = 9.81;   // m/s^2
     var m = 18;     // kg
     var v = 3;      // m/s
@@ -164,6 +165,19 @@ function test_aufgabe_4() {
 
 
 }
+
+/*
+ * Übungsaufgabe 4: Ein Kran wird von Ort A nach Ort B gefahren, die 60 km voneinander entfernt liegen.
+ * Der Schwertransporter mit Kran verlässt A um 6 Uhr mit einer Geschwindigkeit von 20 km/h.
+ * Um 8 Uhr fährt ein Pkw dem Transporter von B aus mit 80 km/h entgegen.
+ * Bestimme Zeitpunkt und Entfernung von B beim Zusammentreffen
+ */
+function aufgabe_4_script() {
+    //geg
+    
+}
+
+
 
 test_aufgabe_4();
 

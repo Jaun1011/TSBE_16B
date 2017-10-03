@@ -14,6 +14,12 @@ Es gibt unter Oracle diverse Systemvariablen welche das System benutzt.
 
 Alle Variablen sind Case Sensitiv
 
+### Oracle Installationen
+Oracle Upgrades funktionieren nach dem System "Out Of Place"
+Dies bedeutet, dass alle Upgrades in einen eigenen Softwarestack im Verzeichnis {$ORACLE_BASE}/products installiert werden müssen.
+
+Es wird davon abgeraten im ORACLE_HOME Config Files anzulegen, da dieses von Zeit zu Zeit änderen kann
+
 ### OFA Optimal Flexible Architecture
 Richtlinie zur ablage von Files in Oracle DB
 Die Dokumentation ist unter 
@@ -22,9 +28,9 @@ Die Dokumentation ist unter
 
 -   /u01
     - /app
-        - /oraInventory         -> Inventory
-        - /oracle               -> ORACLE_BASE
-            - /prduct           -> ORACLE Installation
+        - /oraInventory -> Inventory
+        - /oracle -> ORACLE_BASE
+            - /prduct -> ORACLE Installation
             - /admin            -> Basis Directory für Instazspefischie Direcotries
             - /network
                 - /admin        -> TNS_ADMIN
