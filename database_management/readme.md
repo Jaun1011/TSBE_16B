@@ -152,13 +152,12 @@ Trivadis BasEnv ist eine grosse Script und Alias Sammlung
 
 #### Alias
 Hier einige hilfreiche BasEnv Commands
+
 |Command    |Description                    |
 |---------- |-------------------------------|
 | `cdh`     |`cd $ORACLE_HOME`              |
 | `cda`     |`cd $ORACLE_HOME`              |
 | `cdob`    |`cd $ORACLE_BASE`              |
-
-
 
 ### SQLPlus
 Einloggen als User
@@ -167,7 +166,7 @@ $ sqlplus /nolog
 SQL> connect / as sysdba
 SQL> exit
 ```
-Das ganze geht auch mehrzeilig
+Das ganze geht auch Einzeilig
 ``` shell
 $ sqlplus / as sysdba
 ```
