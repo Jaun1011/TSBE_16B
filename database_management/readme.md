@@ -9,7 +9,7 @@ Es gibt unter Oracle diverse Systemvariablen welche das System benutzt.
 |`${ORACLE_BASE}`     |Base Directory von Oracle. Folgende Komponenten liegen unter diesem Verzeichnis: - Softwate- Admin Verzeichnis|
 |`${ORACLE_HOME}`     |Hier liegt die Oracle Installation.|
 |`${ORACLE_SID}`      |System ID, ist der eindeutige name der Datenbank Instanz. Kann gesezt werden um auf der Instanz zu arbeiten.|
-|`${TNS_ADMIN}`       |Ort der Netzwerk Config - Default unter  `${ORACLE_HOME}/network/admin` |
+|`${TNS_ADMIN}`       |Ort der Netzwerk Config - Default unter  `${ORACLE_HOME}/network/` |
 |Oracle Incentory   |Liegt default in `${ORACLE_HOME}/oraInventory`. Es ist möglich mehrere Infentories pro Host zu haben. Config File ist in `{ORACLE_HOME}/oraInst.loc` abgelegt|
 
 Alle Variablen sind Case Sensitiv
@@ -117,11 +117,23 @@ Unter anderem für Rollbacks in Verwendung
 
 
 ## Datentypen
-|Dateryp   |Beschreibung                   |
-|----------|-------------------------------|
-|`INTEGER`   |Zahlenwert                     |
-|`VARCHAR2`  |Zeichenkette Oracle Spetzifisch|
+|Dateryp    |Beschreibung                   | Wertigkeit                                      |
+|-----------|-------------------------------|-------------------------------------------------|
+|`INTEGER`  |Zahlenwert                     |
+|`VARCHAR2` |Zeichenkette Oracle Spezifisch | Wertebereich wird automatisch assoziert         |
+|`CHAR`     |Fix definierte Zeichenkette    |
+|`NUMBER`   |Zahlenwert mit Gleitkomma      |zwischen 1 * 10^-130 und 9.99...9 x 10^125 zu 38 |
+|`DATE`     |Datum                          |
+|`CLOB`|Character Large Object => Für Objekte|
+|`BLOB`|Binary Large Object => für Binärwerte|
 
+### Special
+``` sql
+NUMBER(3,2) -- 3 Zahlen mit 2 Nachkommastellen
+NUMBER(2)   -- 2 Zahlen
+
+CREATE TABLE test (a char(20));  -- a ist 20 Zeichen lang
+``` 
 
 ## Getting Start
 ### oraenv
@@ -138,19 +150,32 @@ ORACLE_SID ? XE112
 ### Trivadis BasEnv
 Trivadis BasEnv ist eine grosse Script und Alias Sammlung
 
-### Alias
+#### Alias
+Hier einige hilfreiche BasEnv Commands
 |Command    |Description                    |
 |---------- |-------------------------------|
-| `cdh`     |cd $ORACLE_HOME                |
+| `cdh`     |`cd $ORACLE_HOME`              |
+| `cda`     |`cd $ORACLE_HOME`              |
+| `cdob`    |`cd $ORACLE_BASE`              |
+
+
 
 ### SQLPlus
+Einloggen als User
 ``` shell
 $ sqlplus /nolog
 SQL> connect / as sysdba
 SQL> exit
+```
+Das ganze geht auch mehrzeilig
+``` shell
+$ sqlplus / as sysdba
+```
 
-#Alternativ zu sqlplus gibt es noch das Tool sqh.
+Alternativ zu sqlplus gibt es noch das Tool sqh.
 
+
+``` shell
 $ sqh
 # Dieser Command gibt die momentan benutze Datenbank zurück.
 SQL> select name from v$database;
@@ -159,9 +184,17 @@ NAME
 XE112
 ```
 
-Formatierung von Output
+#### Formatierung von Output
 ``` shell
- sql> set lines 200
- sql> col member format a40                 # Setzt die Zeilenbreite von member auf 40 Zeichen
+ SQL> set lines 200
+ SQL> col member format a40                 # Setzt die Zeilenbreite von member auf 40 Zeichen
  SQL> select group#, member from v$logfile order by 1,2; 
  ``` 
+ Hierfür gibt es noch weitere Optionen:
+ 
+|Befehl                     | Funkton                                                               |
+|---------------------------|-----------------------------------------------------------------------|
+|`set lines [n]`            | Setzt die Zeilenlänge auf n Zeichen                                   |
+|`set pages [n]`            | Setzt	die	Seitenlänge	auf	n Zeilen                                    |
+|`col [Name] format a [n]`  | Beschränkt Character Felder auf n Character                           |
+|`col [Name] format 999`    | Beschränkt numerische	Felder auf z.B. 3 Stellen. 5 Stellen = 99999    |
