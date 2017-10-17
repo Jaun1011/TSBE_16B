@@ -135,7 +135,7 @@ NUMBER(2)   -- 2 Zahlen
 CREATE TABLE test (a char(20));  -- a ist 20 Zeichen lang
 ``` 
 
-## Getting Start
+## Getting Start - Near Working
 ### oraenv
 ``` shell
 
@@ -197,3 +197,8 @@ XE112
 |`set pages [n]`            | Setzt	die	Seitenlänge	auf	n Zeilen                                    |
 |`col [Name] format a [n]`  | Beschränkt Character Felder auf n Character                           |
 |`col [Name] format 999`    | Beschränkt numerische	Felder auf z.B. 3 Stellen. 5 Stellen = 99999    |
+
+### Helpfull selects
+``` sql
+select table_name from all_tables; -- gibt alle tabellen des tablespaces zurück
+```
