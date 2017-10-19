@@ -161,6 +161,7 @@ Trivadis BasEnv ist eine grosse Script und Alias Sammlung
 
 #### BasEnv Alias
 Hier einige hilfreiche BasEnv Commands zur Systemadministration
+
 |Command    |Description                    |
 |---------- |-------------------------------|
 | `u`       |Zeit alle Systemrelevanten Infos an|
@@ -170,6 +171,7 @@ Hier einige hilfreiche BasEnv Commands zur Systemadministration
 
 
 Für das Browser durch Directories gibt es diverse cd Aliases
+
 |Command    |Description                    |
 |---------- |-------------------------------|
 | `cdh`     |`cd $ORACLE_HOME`              |
