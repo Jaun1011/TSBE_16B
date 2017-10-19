@@ -179,7 +179,7 @@ Für das Browsen durch Directories gibt es diverse cd Aliases
 | `cdd`     |`cd` in Dial Directory         |
 | `cdob`    |`cd $ORACLE_BASE`              |
 | `cdt`     |`cd $TNS_ADMIN`                |
-| `cdl`     |`cd $ORACLE_BASE/local         |
+| `cdl`     |`cd $ORACLE_BASE/local`        |
 
 ### SQLPlus
 Einloggen als User
