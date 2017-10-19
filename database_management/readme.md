@@ -211,3 +211,30 @@ Hierfür gibt es noch weitere Optionen:
 Gibt alle Tabellen des tablespaces zurück
 
 `select table_name from all_tables;`
+
+
+## Erstellung Tablespace
+Für jeden Tablespace sollte ein eigener Benutzer erstellt werden. 
+So kann garantiert werden, dass von einer fremden Applikation auf fremde Tabellen zugegriffen werden kann.
+
+So kann ein neuer Tablespace erstellt werden:
+``` sql
+create tablespace WEBSHOP_DATA    
+    datafile '/u02/oradata/XE112/webshop_data01XE112.dbf'   
+    size 50M   
+    autoextend on; 
+``` 
+
+Ein neuer User erstellt man so:
+Hierbei müssen drei Schritte ausgeführt werden.
+- User erstellen
+- Berechtigungen setzen
+- Auf den Tablespace berechtigen.
+``` sql
+create user WEBSHOP   
+    default tablespace WEBSHOP_DATA
+    identified by manager; 
+
+grant connect, resource to WEBSHOP;  
+alter user WEBSHOP quota unlimited on WEBSHOP_DATA;
+``` 
