@@ -170,7 +170,7 @@ Hier einige hilfreiche BasEnv Commands zur Systemadministration
 | `sta`     |Zeigt Status der Datenbank an|
 
 
-Für das Browser durch Directories gibt es diverse cd Aliases
+Für das Browsen durch Directories gibt es diverse cd Aliases
 
 |Command    |Description                    |
 |---------- |-------------------------------|
