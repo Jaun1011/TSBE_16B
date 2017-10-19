@@ -159,14 +159,25 @@ ORACLE_SID ? XE112
 ### Trivadis BasEnv
 Trivadis BasEnv ist eine grosse Script und Alias Sammlung
 
-#### Alias
-Hier einige hilfreiche BasEnv Commands
+#### BasEnv Alias
+Hier einige hilfreiche BasEnv Commands zur Systemadministration
+|Command    |Description                    |
+|---------- |-------------------------------|
+| `u`       |Zeit alle Systemrelevanten Infos an|
+| `sqh`     |sqlplus mit Historiesierung|
+| `sq`      |Wie `sqh` jedoch ohne Historiesierung|
+| `sta`     |Zeigt Status der Datenbank an|
 
+
+Für das Browser durch Directories gibt es diverse cd Aliases
 |Command    |Description                    |
 |---------- |-------------------------------|
 | `cdh`     |`cd $ORACLE_HOME`              |
 | `cda`     |`cd $ORACLE_HOME`              |
+| `cdd`     |`cd` in Dial Directory         |
 | `cdob`    |`cd $ORACLE_BASE`              |
+| `cdt`     |`cd $TNS_ADMIN`                |
+| `cdl`     |`cd $ORACLE_BASE/local         |
 
 ### SQLPlus
 Einloggen als User
