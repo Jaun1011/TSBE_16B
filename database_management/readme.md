@@ -1,5 +1,19 @@
 # Datenbank Management
 Im Modul wird mit Oracle DB gearbeitet.
+## Begrifflichkeiten
+
+|Begriff        |Beschreibung               |
+|---------------|---------------------------|
+|Entity         |Eine Einheit, Row, Object, Record, Tupel oder Datensatz|
+|Entitätsmenge  |Eine Menge von mehreren gleichen Entitäten -> eine Tabelle               |
+|Kardinalität   |Mengenangabe Tabellen      |
+|Redundanz      |Das mehrfache Vorkommen von Daten welche überflüssig sind  |
+|Relation       |Beziehung zwischen Tabellen -> Diese sollten immer sprechend sein|
+|Attribut       |Attribute bestimmt die Zusammenstellung der Entity         |
+### Notation von Kardinalität
+
+![](res/kardinaltiät_natation.png?raw=true)
+
 ## Setup
 ### Variablen
 Es gibt unter Oracle diverse Systemvariablen, welche das System benutzt.
@@ -115,7 +129,7 @@ Unter anderem für Rollbacks in Verwendung
 |Dateryp    |Beschreibung                   | Wertigkeit                                      |
 |-----------|-------------------------------|-------------------------------------------------|
 |`INTEGER`  |Zahlenwert                     |
-|`VARCHAR2` |Zeichenkette Oracle Spezifisch | Wertebereich wird automatisch assoziiert         |
+|`VARCHAR2` |Zeichenkette Oracle Spezifisch | Wertebereich wird automatisch assoziiert        |
 |`CHAR`     |Fix definierte Zeichenkette    |
 |`NUMBER`   |Zahlenwert mit Gleitkomma      |zwischen 1 * 10^-130 und 9.99...9 x 10^125 zu 38 |
 |`DATE`     |Datum                          |
@@ -197,4 +211,3 @@ Hierfür gibt es noch weitere Optionen:
 Gibt alle Tabellen des tablespaces zurück
 
 `select table_name from all_tables;`
-
