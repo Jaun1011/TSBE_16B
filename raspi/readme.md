@@ -303,9 +303,7 @@ Als erstes habe ich den 1Wire Sensor und das LED an die entsprechenden GPIOs ges
 Anschliessend habe ich mit Python ein Script geschrieben, welches das File des Onewires ausliest und checkt ob die Temparatur über 23 Grad ist.
 Wenn Die Bedingung erfüllt ist leuchtet das LED.
 Ansonnsten nicht.
-Der Code sit im led_1w.py einsehbar.
-
-
+Der Code sit im [led_1w.py](res/led/led_1w.py) einsehbar.
 
 ## Glossar
 |Begriff|Erklährung|
