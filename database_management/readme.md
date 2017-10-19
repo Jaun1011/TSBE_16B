@@ -157,7 +157,7 @@ $ . oraenv
 ORACLE_SID ? XE112
 ``` 
 ### Trivadis BasEnv
-Trivadis BasEnv ist eine grosse Script und Alias Sammlung
+Trivadis BasEnv ist eine grosse Script- und Alias Sammlung
 
 #### BasEnv Alias
 Hier einige hilfreiche BasEnv Commands zur Systemadministration
