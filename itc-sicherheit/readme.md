@@ -44,3 +44,8 @@ ISMS ist kein Produkt sondern Prozesse und Regeln innerhalb eines Unternehmens.
 ### Überblick
 
 ![](res/itsm_view.png?raw=true)
+
+### Best Practice
+Kann unter anderem eine Empfehlung von Hersteller sein.
+Dies können auch Standarts vom Kobic, ISO etc sein.
+
