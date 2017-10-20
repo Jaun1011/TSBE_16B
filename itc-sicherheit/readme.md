@@ -11,7 +11,7 @@ Eine Massnahme gegen Ransomware sind z.B Backups
 Hierbei wird nicht die Eintrittswarshceinlichkeit gemindert
 IKS wäre hierbei ob der Backup gemacht wird und dass dieser erfolgreich ist sowie valide Daten vorweist.
 
-![](res/iks_kreislauf.jpg?raw=true)
+![](res/iks_kreislauf.jpg?)
 
 Hierbei muss immer belegt werden, dass die möglichen Massnahmen gemacht wurden.
 Z.B Backup wurde täglich gemacht.
