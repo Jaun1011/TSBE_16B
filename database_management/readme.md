@@ -16,7 +16,7 @@ Im Modul wird mit Oracle DB gearbeitet.
 
 
 ## Aufbau einer Datenbank
-Eine relationale Datenbank besteht aus 3 Teilen:
+Eine relationale Datenbank besteht aus 3 Teilen.
 
 |Begriff            |Beschreibung               |
 |-------------------|---------------------------|
@@ -24,8 +24,6 @@ Eine relationale Datenbank besteht aus 3 Teilen:
 |Managementsystem   |Mengenrelationen und Usermanagement|
 |Instanz            |Memorybereich einer Datenbank|
 
-- 
-- Instanz
 ## Setup
 ### Variablen
 Es gibt unter Oracle diverse Systemvariablen, welche das System benutzt.
