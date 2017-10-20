@@ -37,15 +37,16 @@ Wesswegen wurden die entsprechenden Punkte gestrichen.
 Dies können Gesetze sowie best practise sein welche eingehalten werden müssen.
 
 ## ISMS
+
+![](res/itsm_view.png?raw=true)
+
 ISMS kann zertifiziert werden lassen. Dadurch kann das Vertrauen vom Kunden verbessert werden.
 Jedoch kann dies aber auch ein trugschluss sein, da Zertifizierungen ebenfalls sehr detailiert gemacht werden.
 ISMS ist kein Produkt sondern Prozesse und Regeln innerhalb eines Unternehmens.
 
-### Überblick
-
-![](res/itsm_view.png?raw=true)
-
 ### Best Practice
 Kann unter anderem eine Empfehlung von Hersteller sein.
 Dies können auch Standarts vom Kobic, ISO etc sein.
+
+Keine Namen sondern Rollen bei Verantwortlichkeiten definieren.
 

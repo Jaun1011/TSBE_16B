@@ -14,6 +14,18 @@ Im Modul wird mit Oracle DB gearbeitet.
 
 ![](res/kardinaltiät_natation.png?raw=true)
 
+
+## Aufbau einer Datenbank
+Eine relationale Datenbank besteht aus 3 Teilen:
+
+|Begriff            |Beschreibung               |
+|-------------------|---------------------------|
+|Datenbank          |Physische Repräsentation der Daten|
+|Managementsystem   |Mengenrelationen und Usermanagement|
+|Instanz            |Memorybereich einer Datenbank|
+
+- 
+- Instanz
 ## Setup
 ### Variablen
 Es gibt unter Oracle diverse Systemvariablen, welche das System benutzt.
@@ -38,18 +50,19 @@ Es wird davon abgeraten im ORACLE_HOME Config Files anzulegen, da dieses von Zei
 Richtlinie zur Ablage von Files in Oracle DB
 Die Dokumentation ist unter `/u01/app/oracle/local/dba/doc/ofa4.pdf` zu finden.
 
+```
 -   /u01
     - /app
-        - /oraInventory -> Inventory
-        - /oracle -> ORACLE_BASE
-            - /prduct -> ORACLE Installation
-            - /admin            -> Basis Directory für Instanz-spezifische Directories
+        - /oraInventory                 Inventory
+        - /oracle                       `$ORACLE_BASE`
+            - /prduct                   ORACLE Installation
+            - /admin                    Basis Directory für Instanz-spezifische Directories
             - /network
-                - /admin        -> TNS_ADMIN
-                - /log          -> SQlNet Logs
-                - /trace        -> SQlNet Trace Files
-            - /diag
-            
+                - /admin                TNS_ADMIN
+                - /log                  SQlNet Logs
+                - /trace                SQlNet Trace Files
+            - /diag                     
+```            
 ### Oracle Versionen
 Es ist durchaus üblich mehrere Versionen von Oracle auf dem gleichen Server zu betreiben.
 
