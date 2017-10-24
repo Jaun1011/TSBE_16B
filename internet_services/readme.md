@@ -24,6 +24,12 @@ Heist, wenn die lokale IP nicht aufgelöst werden kann,
 wird diese an den nächst höheren DNS Server weitergegeben, 
 bis diese aufgelöst werden kann.
 
+Diese DNS Einträge können auch Lokal gemacht werden und zwar im File `/etc/hosts/` 
+
+### Namespaces
+Namensräume oder Namespaces sind Bereiche welche eindeutig aufgerufen werden können.
+Ein Beispiel hierzu ist `127.0.0.1` diese IP ist immer mit dem Namen `localhost` aufrufbar.
+ 
 ## Config Management
 /etc/network
 ```
