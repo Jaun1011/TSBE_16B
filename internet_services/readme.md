@@ -17,7 +17,12 @@ Ein Nameserver übersetzt eine IP in einen Name.
 Die Funkltionsweise ist hierbei analog zum Telefonbuch.
 
 
-
+### So funktionierts
+Wenn ein Domain Name Server nichts mit dem Namen oder einer IP Adresse anzufangen weis, 
+wird diese an den nächst höheren Server weitergegeben.
+Heist, wenn die lokale IP nicht aufgelöst werden kann, 
+wird diese an den nächst höheren DNS Server weitergegeben, 
+bis diese aufgelöst werden kann.
 
 ## Config Management
 /etc/network
