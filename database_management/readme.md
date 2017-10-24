@@ -13,8 +13,6 @@ Im Modul wird mit Oracle DB gearbeitet.
 ### Notation von Kardinalität
 
 ![](res/kardinaltiät_natation.png?raw=true)
-
-
 ## Aufbau einer Datenbank
 Eine relationale Datenbank besteht aus 3 Teilen.
 
