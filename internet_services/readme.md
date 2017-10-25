@@ -68,7 +68,7 @@ Die Funkltionsweise ist hierbei analog zum Telefonbuch.
 
 |Kürzel | Beschrieb|
 |-------|---|
-|`SOA`  | Stat Of Authoroty|
+|`SOA`  | Start Of Authoroty|
 |`RR`   | Rescouce Record|
 |`$TTL` | Standart Time to Live|
 |`@`    | Steht am Anfang der Zeile. Definiert, dass sich alle Einträge auf die `/etc/named.conf` beziehen. |
