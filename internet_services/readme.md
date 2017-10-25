@@ -44,6 +44,25 @@ An der Spitze der Nahrungskette stehen die so genannten **Root Server**.
 Weltweit gibt es davon rund 13 Stück. Auf den Root Servern wird die Auflösung für die Top Level Domains aufgezeichniet.
 Eine vollständige Liste kann auf der [IANA](http://www.ripe.net/) Website angeschaut werden.
 
+
+## Resolver
+### Rekursive Anfrage
+Anfrage an fixen Nameserver. Dieser muss eine eindeutige Rückmeldung geben. 
+Heist er kennt die Auflösung oder er kennt sie nicht
+### Iterative Anfrage
+Der Nameserver gibt empfielt beim nicht Auflösen einen entsprechenden Nameserver zurück, 
+welcher in der Lage sein könnte den Request aufzulösen
+So hangelt sich der  Resolver von Nameserver zu Nameserver bis ein Auflösung funktioniert hat.
+
+In der Praxis wird eher die rekursive Anfrage gemacht, da Systeme meist mit einer Empfehlung nicht viel anfangen können.
+
+|Typ                 | Beispiel |
+|--------------------|--------------------------------------------|
+|**forward lookup**  | Domain wird zu IP Adresse umgewandelt      |
+|**reverse lookup**  | IP Adresse wird zu Domain umgewandelt      |
+
+
+
 ## Config Management
 /etc/network
 ```
