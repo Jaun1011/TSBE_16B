@@ -6,8 +6,8 @@ Um DNS einzrichten müssen folgende Config Files angepasst werden.
 |File                           | Beschreibgung                 |
 |-------------------------------|-------------------------------|
 |`/etc/network/interfaces`      | Hier wird die Config für die Network Interfaces definiert. Wie z.B IP, Netmask, Gateway und DNS Resolver|
-|`/etc/hosntname/`              | Name des Rechners             |
-|`/etc/hosts/`                  | Feste Zuordung von IP auf Hostname|
+|`/etc/hosntname`               | Name des Rechners             |
+|`/etc/hosts`                   | Feste Zuordung von IP auf Hostname|
 |`/etc/resolv.conf`             | Nameserver sowie lokale DNS Domain|
 |`/etc/nsswitch.conf`           | Reienfolge für die Abarbeitung und Auflösung der IP und des Namen|
 
@@ -31,7 +31,18 @@ Namensräume oder Namespaces sind Bereiche welche eindeutig aufgerufen werden k�
 Ein Beispiel hierzu ist `127.0.0.1` diese IP ist immer mit dem Namen `localhost` aufrufbar.
 
 Das System kann sich wie ein Baum vorgestellt werden.
-Zuest wird die *Top Level Domain aufgelöst*. Anschliessend die *Second Level Domain* und danach die *Third Level Domain*.
+Zuest wird die **Top Level Domain** aufgelöst. Anschliessend die **Second Level Domain** und danach die **Third Level Domain**.
+
+|Typ                                | Beispiel |
+|-----------------------------------|----------|
+|Top Level Domain                   | ch.      |
+|Sub Level Domain                   | swisscom.|
+|Third Level Domain                 | shop.    |
+|FQDN(Full Qualified Domain Dame)   | shop.swisscom.ch.|
+
+An der Spitze der Nahrungskette stehen die so genannten **Root Server**. 
+Weltweit gibt es davon rund 13 Stück. Auf den Root Servern wird die Auflösung für die Top Level Domains aufgezeichniet.
+Eine vollständige Liste kann auf der [IANA](http://www.ripe.net/) Website angeschaut werden.
 
 ## Config Management
 /etc/network
