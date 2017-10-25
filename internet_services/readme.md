@@ -96,6 +96,17 @@ $TTL 12h
 )
 ```
 
+|Suffix|Beschrieb|
+|-------|-------|
+|serial | Muss inkrementiert werden dass der Secondary Nameserver die Änderungen auf dem Primary Nameserver akzeptiert |
+|refresh| Zeitraum in dem der Secondary Nameserver schaut ob sich beim Primary Nameserver die Serialnummer geändert hat|
+|retry  | Nach welcher Zeit wird der Request erneut ausgeführt|
+|expire | Ablaufdatum - Wenn der Secondary Nameserver innerhalb dieser Zeit keinen Kontakt zum Primary Nameserver herstellen konnte wird die Zone ungültig|
+
+
+
+### Secondary Nameserver
+
 
 ### So funktionierts
 Wenn ein Domain Name Server nichts mit dem Namen oder einer IP Adresse anzufangen weis, 
