@@ -1,31 +1,5 @@
 # Internet Services
 ## DNS (Domain Name System)
-### Configuration
-Um DNS einzrichten müssen folgende Config Files angepasst werden.
-
-|File                           | Beschreibgung                 |
-|-------------------------------|-------------------------------|
-|`/etc/network/interfaces`      | Hier wird die Config für die Network Interfaces definiert. Wie z.B IP, Netmask, Gateway und DNS Resolver|
-|`/etc/hosntname`               | Name des Rechners             |
-|`/etc/hosts`                   | Feste Zuordung von IP auf Hostname|
-|`/etc/resolv.conf`             | Nameserver sowie lokale DNS Domain|
-|`/etc/nsswitch.conf`           | Reienfolge für die Abarbeitung und Auflösung der IP und des Namen|
-
-### Nameserver
-Ein Nameserver übersetzt eine IP in einen Name.
-`192.168.0.10` wird  so zu `host1.test.ch` umgewandelt.
-Die Funkltionsweise ist hierbei analog zum Telefonbuch.
-
-
-### So funktionierts
-Wenn ein Domain Name Server nichts mit dem Namen oder einer IP Adresse anzufangen weis, 
-wird diese an den nächst höheren Server weitergegeben.
-Heist, wenn die lokale IP nicht aufgelöst werden kann, 
-wird diese an den nächst höheren DNS Server weitergegeben, 
-bis diese aufgelöst werden kann.
-
-Diese DNS Einträge können auch Lokal gemacht werden und zwar im File `/etc/hosts/` 
-
 ### Namespaces
 Namensräume oder Namespaces sind Bereiche welche eindeutig aufgerufen werden können.
 Ein Beispiel hierzu ist `127.0.0.1` diese IP ist immer mit dem Namen `localhost` aufrufbar.
@@ -51,7 +25,7 @@ Anfrage an fixen Nameserver. Dieser muss eine eindeutige Rückmeldung geben.
 Heist er kennt die Auflösung oder er kennt sie nicht
 ### Iterative Anfrage
 Der Nameserver gibt empfielt beim nicht Auflösen einen entsprechenden Nameserver zurück, 
-welcher in der Lage sein könnte den Request aufzulösen
+welcher in der Lage sein könnte den Request aufzulösen.
 So hangelt sich der  Resolver von Nameserver zu Nameserver bis ein Auflösung funktioniert hat.
 
 In der Praxis wird eher die rekursive Anfrage gemacht, da Systeme meist mit einer Empfehlung nicht viel anfangen können.
@@ -64,7 +38,7 @@ In der Praxis wird eher die rekursive Anfrage gemacht, da Systeme meist mit eine
 Da die Auflösung der gesamten IP Adresse eine sehr Performace Intensive Angelegenheit ist, 
 wird von reverse mit der `in-addr.arpa.` eingetragen.
 
-Die Adresse `83.142.228.10` wird so aufgelöst
+Die Adresse `83.142.228.10` wird so aufgelöst.
                      
 |Layer| Beispiel                  | Beschrieb|
 |-----|---------------------------|---------------------------|
@@ -73,7 +47,56 @@ Die Adresse `83.142.228.10` wird so aufgelöst
 |3    | `228.142.83.in-addr.arpa.`| Bereich von `83.142.228.0` bis `83.142.228.255` |
 
 
-## Config Management
+## Configuration
+Um DNS einzrichten müssen folgende Config Files angepasst werden.
+
+|File                           | Beschreibgung                     |
+|-------------------------------|-----------------------------------|
+|`/etc/network/interfaces`      | Hier wird die Config für die Network Interfaces definiert. Wie z.B IP, Netmask, Gateway und DNS Resolver|
+|`/etc/hosntname`               | Name des Rechners                 |
+|`/etc/hosts`                   | Feste Zuordung von IP auf Hostname|
+|`/etc/resolv.conf`             | Nameserver sowie lokale DNS Domain|
+|`/etc/nsswitch.conf`           | Reienfolge für die Abarbeitung und Auflösung der IP und des Namen|
+
+## Nameserver
+Ein Nameserver übersetzt eine IP in einen Name.
+`192.168.0.10` wird  so zu `host1.test.ch` umgewandelt.
+Die Funkltionsweise ist hierbei analog zum Telefonbuch.
+
+
+### Zonendefinition
+
+|Kürzel | Beschrieb|
+|-------|---|
+|`SOA`  | Stat Of Authoroty|
+|`RR`   | Rescouce Record|
+|`$TTL` | Standart Time to Live|
+|`@`    | Steht am Anfang der Zeile. Definiert, dass sich alle Einträge auf die `/etc/named.conf` beziehen. |
+|`IN`   | Bezieht sich auf die Klasse **Internet**|
+
+Die `@` Schreibweise hat den Vorteil dass von mehreren Zonendefinitionen auf die gleiche Zonendatei verweist werden kann.
+
+
+**Zeitdefinitonen:**
+
+|Suffix|Beschrieb|
+|---|-------|
+|w  |Woche  |
+|d  |Tag    |
+|m  |Minute |
+
+
+
+### So funktionierts
+Wenn ein Domain Name Server nichts mit dem Namen oder einer IP Adresse anzufangen weis, 
+wird diese an den nächst höheren Server weitergegeben.
+Heist, wenn die lokale IP nicht aufgelöst werden kann, 
+wird diese an den nächst höheren DNS Server weitergegeben, 
+bis diese aufgelöst werden kann.
+
+Diese DNS Einträge können auch Lokal gemacht werden und zwar im File `/etc/hosts/` 
+
+
 /etc/network
 ```
 auto 
