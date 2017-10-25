@@ -61,6 +61,16 @@ In der Praxis wird eher die rekursive Anfrage gemacht, da Systeme meist mit eine
 |**forward lookup**  | Domain wird zu IP Adresse umgewandelt      |
 |**reverse lookup**  | IP Adresse wird zu Domain umgewandelt      |
 
+Da die Auflösung der gesamten IP Adresse eine sehr Performace Intensive Angelegenheit ist, 
+wird von reverse mit der `in-addr.arpa.` eingetragen.
+
+Die Adresse `83.142.228.10` wird so aufgelöst
+                     
+|Layer| Beispiel                  | Beschrieb|
+|-----|---------------------------|---------------------------|
+|1    | `83.in-addr.arpa.`        | Erstes Byte wird aufgelöst|
+|2    | `142.83.in-addr.arpa.`    | Zweites Byte definiert den Bereich von `83.142.0.0` bis `83.142.255.255` |
+|3    | `228.142.83.in-addr.arpa.`| Bereich von `83.142.228.0` bis `83.142.228.255` |
 
 
 ## Config Management
