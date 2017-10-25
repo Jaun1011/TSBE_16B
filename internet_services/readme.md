@@ -76,7 +76,6 @@ Die Funkltionsweise ist hierbei analog zum Telefonbuch.
 
 Die `@` Schreibweise hat den Vorteil dass von mehreren Zonendefinitionen auf die gleiche Zonendatei verweist werden kann.
 
-
 **Zeitdefinitonen:**
 
 |Suffix|Beschrieb|
@@ -85,6 +84,17 @@ Die `@` Schreibweise hat den Vorteil dass von mehreren Zonendefinitionen auf die
 |d  |Tag    |
 |m  |Minute |
 
+``` apacheconf
+$TTL 12h
+;SOA Resource Record:
+@ IN  SOA  ns1.example.net.  admin.example.net. (
+    1       ; serial
+    12h     ; refresh
+    1h      ; retry
+    10d     ; expire
+    1h      ; minimum (negTTL)
+)
+```
 
 
 ### So funktionierts
