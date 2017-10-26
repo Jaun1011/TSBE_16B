@@ -97,7 +97,7 @@ $TTL 12h
 ```
 
 |Suffix|Beschrieb|
-|-------|-------|
+|-------|--------|
 |serial | Muss inkrementiert werden dass der Secondary Nameserver die Änderungen auf dem Primary Nameserver akzeptiert |
 |refresh| Zeitraum in dem der Secondary Nameserver schaut ob sich beim Primary Nameserver die Serialnummer geändert hat|
 |retry  | Nach welcher Zeit wird der Request erneut ausgeführt|
@@ -159,4 +159,4 @@ Von welchen netzen können fragen beantwortet werden.
 
 
 ## DHCP
-
+DHCP *Dynamic Host Configuration Protocol*
