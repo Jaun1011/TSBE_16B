@@ -67,10 +67,10 @@ Die Funkltionsweise ist hierbei analog zum Telefonbuch.
 ### Zonendefinition
 
 |Kürzel | Beschrieb|
-|-------|---|
-|`SOA`  | Start Of Authoroty|
-|`RR`   | Rescouce Record|
-|`$TTL` | Standart Time to Live|
+|-------|-----------------------|
+|`SOA`  | Start Of Authoroty    |
+|`RR`   | Rescouce Record       |
+|`$TTL` | Standart Time to Live |
 |`@`    | Steht am Anfang der Zeile. Definiert, dass sich alle Einträge auf die `/etc/named.conf` beziehen. |
 |`IN`   | Bezieht sich auf die Klasse **Internet**|
 
@@ -118,7 +118,8 @@ bis diese aufgelöst werden kann.
 Diese DNS Einträge können auch Lokal gemacht werden und zwar im File `/etc/hosts/` 
 
 
-/etc/network
+`/etc/network`
+
 ```
 auto 
 ```
@@ -141,6 +142,7 @@ zone "bund.int" in {
 
 zone 220.0.168.
 ```
+
 named.conf.options
 forwarders
 wenn der nicht aufgelöst werden kann werden diese verwendet.
@@ -149,14 +151,11 @@ allow-qurey
 aus welchen Netzen können anfragen gemahct werden.
 Von welchen netzen können fragen beantwortet werden.
 
-/etc/bind/db.sb.int
-
+`/etc/bind/db.sb.int`
 
 ### Fehleranalyse
 1) zuerst alle verlinkungen im named.conf.local analysieren
 2) in der Zonendatei können die Zonen angeschaut werden
-
-
 
 ## DHCP
 DHCP *Dynamic Host Configuration Protocol*

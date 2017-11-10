@@ -50,3 +50,9 @@ Dies können auch Standarts vom Kobic, ISO etc sein.
 
 Keine Namen sondern Rollen bei Verantwortlichkeiten definieren.
 
+## Firewall Handhabung
+Es gibt mehrere Arten von Firewalls wobei die Grenzen hier vermehrt verschwimmen.
+
+Es gibt grob gesagt 2 Regelsetzt für eine Firewall.
+Alles was von aussen kommt wird prinzipiell zugetan und erst bei Nutzung aufgetan.
+Von innen nach aussen ist man weniger restriktiv.

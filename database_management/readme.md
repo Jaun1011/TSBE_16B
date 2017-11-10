@@ -259,4 +259,8 @@ create user WEBSHOP
 
 grant connect, resource to WEBSHOP;  
 alter user WEBSHOP quota unlimited on WEBSHOP_DATA;
-``` 
+```
+
+
+## Views
+Oracle arbeitet mit 

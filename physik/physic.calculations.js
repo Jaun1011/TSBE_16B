@@ -183,10 +183,8 @@ test_aufgabe_4();
 
 
 function from_kmh_to_ms(v){
-    return v * 1000 / 3600;
+    return v * 3.6;
 }
-
-
 
 /*
 console.log("Ausgabe 61");
