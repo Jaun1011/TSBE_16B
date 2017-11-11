@@ -124,12 +124,10 @@ Diese DNS Einträge können auch Lokal gemacht werden und zwar im File `/etc/hos
 auto 
 ```
 
-
-dns-nameservers
+**dns-nameservers**
 Hier müssen IP Adressen welche der Resolver benötigt angegeben
 
-
-dns-search
+**dns-search**
 es muss nicht mehr der ganze name des dns genannt werden.
 
 
@@ -143,11 +141,11 @@ zone "bund.int" in {
 zone 220.0.168.
 ```
 
-named.conf.options
+**named.conf.options**
 forwarders
 wenn der nicht aufgelöst werden kann werden diese verwendet.
 
-allow-qurey
+**allow-qurey**
 aus welchen Netzen können anfragen gemahct werden.
 Von welchen netzen können fragen beantwortet werden.
 
@@ -159,3 +157,52 @@ Von welchen netzen können fragen beantwortet werden.
 
 ## DHCP
 DHCP *Dynamic Host Configuration Protocol*
+
+## Mail
+Mail wird über SMTP übermittelt.
+
+## Apache
+Apache ist ein Webserver. Dieser kommuniziert über den Port 80 und Port 8443.
+
+### Config Files
+/etc/apache2/apache2.confg
+Grundsätzliche Config
+
+/etc/apache2/ports.conf
+Werden Ports konfiguriert
+
+/etc/apache2/ssl
+Können ssl Zertifikate importiert werden.
+
+
+
+/etc/apache2/sites-default.conf
+
+
+/etc/apache2/sites-available/www.tsbe.dmz.conf
+
+sites-available/www.tsbe.dmz.conf
+
+
+
+``` config
+website ist fix
+
+```
+
+
+
+
+
+
+
+
+Apache arbeitet mit Virtuellen Hosts.
+Dieser Ansatz ist nach dem Motto mit einem Host werden mehrere Applikationen betrieben
+
+
+
+
+
+
+
