@@ -7,3 +7,4 @@ In diesem Projekt befinden sich Dokumentationen und Schulprojekte für die TSBE.
 3) [PiGRRL](pigrrl/readme.md)
 4) [ITC Security](itc-sicherheit/readme.md)
 5) [Internet Services](internet_services/readme.md)
+6) [Service Management](servicemanagement/readme.md)
