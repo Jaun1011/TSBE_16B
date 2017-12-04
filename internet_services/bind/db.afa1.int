@@ -1,0 +1,14 @@
+$TTL	604800
+@	IN	SOA	jupiter.afa1.int. root.afa1.int (
+	    2017112201
+		    604800
+	         86400
+		   2419200		  
+	    	604800	  
+);
+
+@	IN	NS	jupiter.afa1.int.
+@	IN	A	192.168.210.102
+
+jupiter	IN	A	192.168.210.60
+www		IN	A	192.168.210.60
