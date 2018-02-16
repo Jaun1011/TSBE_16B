@@ -87,9 +87,9 @@ Zuvor wurde ein noch einen Prototyp auf eine Steckplatine gesetzt und anschliess
 
 Die Knöpfe wurden folgenden GPIO's zugewiesen.
 
-Funktion | Pin | GPIO
---- | --- | ---
-LEFT|Pin 7 |GPIO 4
+|Funktion | Pin | GPIO
+|-----|------|-------|
+|LEFT |Pin 7 |GPIO 4 |
 UP|Pin 36|GPIO 16
 RIGHT|Pin 35|GPIO 19
 DOWN|Pin 37|GPIO 26

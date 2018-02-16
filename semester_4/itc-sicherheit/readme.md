@@ -56,3 +56,23 @@ Es gibt mehrere Arten von Firewalls wobei die Grenzen hier vermehrt verschwimmen
 Es gibt grob gesagt 2 Regelsetzt für eine Firewall.
 Alles was von aussen kommt wird prinzipiell zugetan und erst bei Nutzung aufgetan.
 Von innen nach aussen ist man weniger restriktiv.
+
+
+## SAN
+Storage Area Network -> bietet eine hohe flexibilität
+Ein SAN ist praktisch immer Redundant aufgebaut.
+
+- SATA ist sehr günstig und nicht sehr schnell
+- Fiber Channel Disk sind extrem schnell aber ziemlich teuer.
+
+
+LOOM -> einzelne Speichereinheit zB eine Disk
+
+
+Backup von SAN Daten 
+Kann nicht mehr über ethernet gemacht werden
+Ein Backup kann dirrekt vom SAN gezogen werden.
+Diese gehen meist auf ein anderes SAN
+
+Bei Katastrophen ist eine Redundanz unvermeidbar.
+Z.B Brand, Hochwasser etc
