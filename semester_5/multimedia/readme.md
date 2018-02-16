@@ -128,3 +128,37 @@ Container ist wie das Gerüst
     Hier sind Audio etc alles zusammengefasst.
 
 Alles zusammen komiliert gibt eine Datei
+
+# Bildschirm Technologien
+## Plasmatechnik
+Jedes Pixel hat für sich geläuchtet. Dies funktionierte durch eine Gasmischung.
+
+Vorteile
+- Hatte guten Kontrasst, guter betrachtungswinkel
+- Selbstleuchtend
+Nachteile
+- Einbrennung
+- Schnell kaput
+
+
+## LCD
+Vergleichbar mit der Lammellenstore
+Durch ein "Zuklappen" von Pixeln wird der Gewünschte Farbton erreicht.
+Anschliessend wird durch eine Folie das Licht gestreut
+
+## LED
+Eigentlich immer noch LCD 
+Weniger Stromverbrauch
+
+## Dynamic LED
+Durch Abstellen der Dunklen beleuchtungsbreiche wird ein besseres Schwarz erreicht.
+Nachteil ist, dass es nicht selbstleuchtend ist
+
+## OLED
+Sehr flexibel
+- Pixel können direkt angesteuert werden.
+- Sehr dünn 
+- 
+
+QLED ist nicht OLED
+QLED ist heller  
