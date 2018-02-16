@@ -200,9 +200,47 @@ website ist fix
 Apache arbeitet mit Virtuellen Hosts.
 Dieser Ansatz ist nach dem Motto mit einem Host werden mehrere Applikationen betrieben
 
+Internlace 
+Halbbilder werden verwendet
 
 
 
 
+Progressiv scan 
+Ganzes Bild wird übertragen
 
 
+HD ready
+Kann für HD Auflösung verwendet werden
+
+
+HD Tv
+Hat einen Tv Tuner drinnen ferneher kann verwendet werden ohne receiver
+
+UHD
+1.4 HDMI können 30 Hz übertragen werden.
+
+
+8K
+
+## Ultra HD Premium
+Braucht viel Candelas
+hohe Kontrastwerte 20'000 : 1
+
+
+## Beamer
+### LCD
+Geeignet für Standbilder
+
+### DLP
+Funktioniert durch Drehscheibe
+
+Gut für Filme
+
+### LCoS
+Verbindung von beiden Technilogien
+
+
+## Berechnung Distanz
+
+    distanz = breite * verhältnis
