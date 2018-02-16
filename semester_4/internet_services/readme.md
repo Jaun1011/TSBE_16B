@@ -176,26 +176,15 @@ Können ssl Zertifikate importiert werden.
 
 
 
-/etc/apache2/sites-default.conf
-
-
-/etc/apache2/sites-available/www.tsbe.dmz.conf
+    /etc/apache2/sites-default.conf
+    /etc/apache2/sites-available/www.tsbe.dmz.conf
 
 sites-available/www.tsbe.dmz.conf
-
-
 
 ``` config
 website ist fix
 
 ```
-
-
-
-
-
-
-
 
 Apache arbeitet mit Virtuellen Hosts.
 Dieser Ansatz ist nach dem Motto mit einem Host werden mehrere Applikationen betrieben
@@ -203,16 +192,11 @@ Dieser Ansatz ist nach dem Motto mit einem Host werden mehrere Applikationen bet
 Internlace 
 Halbbilder werden verwendet
 
-
-
-
 Progressiv scan 
 Ganzes Bild wird übertragen
 
-
 HD ready
 Kann für HD Auflösung verwendet werden
-
 
 HD Tv
 Hat einen Tv Tuner drinnen ferneher kann verwendet werden ohne receiver
@@ -244,3 +228,9 @@ Verbindung von beiden Technilogien
 ## Berechnung Distanz
 
     distanz = breite * verhältnis
+        
+Kilobyte Bit
+Codierung
+Anschlusskabel
+
+Bechreibe Akustischen Kurzschluss!!
