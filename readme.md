@@ -11,5 +11,5 @@ In diesem Projekt befinden sich Dokumentationen und Schulprojekte für die TSBE.
 6) [Service Management](semester_4/servicemanagement/readme.md)
 
 ## Semester 5
-1) [Multimedia](semester_4/multimedia/readme.md)
-2) [Architektur](semester_4/architektur/readme.md)
+1) [Multimedia](semester_5/multimedia/readme.md)
+2) [Architektur](semester_5/architektur/readme.md)
