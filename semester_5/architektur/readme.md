@@ -475,6 +475,28 @@ Als erstes wird sichergestellt, dass auf Node1 ceph richtig gestartet ist
 Danach werden die beiden Yaml Files provisioner.yaml und storage.yaml erstellt.
 
 ```yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+	name: rbd-provisioner
+	namespace: kube-system
+	spec:
+		replicas: 1
+		template:
+			metadata:
+				labels:
+					app: rbd-provisioner
+					spec:
+						containers:
+							name: rbd-provisioner
+							image: "quay.io/external_storage/rbd-
+							provisioner:v0.1.1"
+							serviceAccountName: persistent-volume-binder
+							
+```
+
+
+```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -490,9 +512,66 @@ metadata:
 			userSecretName: ceph-secret
 ```
 
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+name: ceph-secret
+type: "kubernetes.io/rbd"
+data:
+key:
+	test
+Q==
+```
+
+
+
+
+
+
 Da wir im storage.yaml ceph-secret definiert haben, muss auf dem Node1 das Passwort in Base 64 encoded werden.
 
 
 	$ grep key /etc/ceph/ceph.client.admin.keyring |awk '{printf "%s", $NF}'|base64
-	QVFBMTlvZGEyQnRLRnhBQThkQyswcUViRFloUllmT3cyTHdzU2c9PQ==
+	****==
+	
+	
 
+Anschliessend werden die einznen Konfigs in Kubernetes eingespielt
+
+	$ kc create -f provisioner.yaml
+	$ kc create -f secret.yaml
+	$ kc create -f secret.yaml --namespace=kube-system
+	$ kc create -f storage.yaml	storageclass "ceph" created
+
+
+Jetzt da alles eingerichtet ist, wir PVC
+
+	$ kc get pvc
+	NAME            STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+	pvc-guestbook   Bound     pvc-51714cbe-13d7-11e8-a958-42010a840011   1Gi        RWO            ceph           2m
+
+
+
+## Guestboot installieren
+
+Source auf Jumphost laden
+
+	$ scp -r guestbook-go student1@test:/home/student1/
+
+Nun können wir die Applikation erstellen:
+
+	$ kc create -f redis-master-controller.json
+	$ kc create -f redis-master-service.json
+	$ kc create -f redis-slave-controller.json
+	$ kc create -f redis-slave-service.json
+	$ kc create -f guestbook-controller.json
+	$ kc create -f guestbook-service.json
+	$ gcloud compute instances list
+	NAME      ZONE            MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP     STATUS
+	jumphost  europe-west1-d  f1-micro                    10.132.0.2   35.205.224.103  RUNNING
+	s1-node1  europe-west1-d  n1-standard-2               10.132.0.17  35.187.68.150   RUNNING
+	s1-node2  europe-west1-d  n1-standard-2               10.132.0.16  35.195.163.210  RUNNING
+	s1-node3  europe-west1-d  n1-standard-2               10.132.0.15  35.195.143.143  RUNNING
+
+	
