@@ -491,7 +491,6 @@ metadata:
 		 	            name: rbd-provisioner
 			            image: "quay.io/external_storage/rbd-provisioner:v0.1.1"
 			            serviceAccountName: persistent-volume-binder
-			            	
 ```
 
 
