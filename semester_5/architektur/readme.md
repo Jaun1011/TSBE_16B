@@ -478,21 +478,20 @@ Danach werden die beiden Yaml Files provisioner.yaml und storage.yaml erstellt.
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-	name: rbd-provisioner
-	namespace: kube-system
-	spec:
-		replicas: 1
-		template:
-			metadata:
-				labels:
-					app: rbd-provisioner
-					spec:
-						containers:
-							name: rbd-provisioner
-							image: "quay.io/external_storage/rbd-
-							provisioner:v0.1.1"
-							serviceAccountName: persistent-volume-binder
-							
+   name: rbd-provisioner
+   namespace: kube-system
+   spec:
+      replicas: 1
+	  template:
+         metadata:
+            labels:
+               app: rbd-provisioner
+      	          spec:
+      	             containers:
+		 	            name: rbd-provisioner
+			            image: "quay.io/external_storage/rbd-provisioner:v0.1.1"
+			            serviceAccountName: persistent-volume-binder
+			            	
 ```
 
 
@@ -500,11 +499,11 @@ metadata:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-	name: ceph
-	provisioner: ceph.com/rbd
-		parameters:
-			monitors: s1-node1,s1-node2,s1-node3
-			pool: rbd
+   mame: ceph
+   provisioner: ceph.com/rbd
+	  parameters:
+	     monitors: s1-node1,s1-node2,s1-node3
+		    pool: rbd
 			adminId: admin
 			adminSecretNamespace: kube-system
 			adminSecretName: ceph-secret
@@ -518,16 +517,9 @@ kind: Secret
 metadata:
 name: ceph-secret
 type: "kubernetes.io/rbd"
-data:
-key:
-	test
-Q==
+   data:
+      key: test
 ```
-
-
-
-
-
 
 Da wir im storage.yaml ceph-secret definiert haben, muss auf dem Node1 das Passwort in Base 64 encoded werden.
 
