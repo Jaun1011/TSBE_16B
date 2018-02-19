@@ -480,17 +480,17 @@ kind: Deployment
 metadata:
    name: rbd-provisioner
    namespace: kube-system
-   spec:
-      replicas: 1
-	  template:
-         metadata:
-            labels:
-               app: rbd-provisioner
-      	          spec:
-      	             containers:
-		 	            name: rbd-provisioner
-			            image: "quay.io/external_storage/rbd-provisioner:v0.1.1"
-			            serviceAccountName: persistent-volume-binder
+spec:
+   replicas: 1
+   template:
+      metadata:
+          labels:
+              app: rbd-provisioner
+spec:
+   containers:
+      name: rbd-provisioner
+	  image: "quay.io/external_storage/rbd-provisioner:v0.1.1"
+	  serviceAccountName: persistent-volume-binder
 ```
 
 
