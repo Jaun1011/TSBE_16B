@@ -489,25 +489,25 @@ spec:
 spec:
    containers:
       name: rbd-provisioner
-	  image: "quay.io/external_storage/rbd-provisioner:v0.1.1"
-	  serviceAccountName: persistent-volume-binder
+      image: "quay.io/external_storage/rbd-provisioner:v0.1.1"
+      serviceAccountName: persistent-volume-binder
 ```
 
 
 ```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
-metadata:
+metadata:   
    mame: ceph
    provisioner: ceph.com/rbd
-	  parameters:
-	     monitors: s1-node1,s1-node2,s1-node3
-		    pool: rbd
-			adminId: admin
-			adminSecretNamespace: kube-system
-			adminSecretName: ceph-secret
-			userId: admin
-			userSecretName: ceph-secret
+      parameters:
+         monitors: s1-node1,s1-node2,s1-node3
+            pool: rbd
+            adminId: admin
+            adminSecretNamespace: kube-system
+            adminSecretName: ceph-secret
+            userId: admin
+            userSecretName: ceph-secret
 ```
 
 ```yaml

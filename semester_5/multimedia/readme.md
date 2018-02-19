@@ -156,9 +156,10 @@ Nachteil ist, dass es nicht selbstleuchtend ist
 
 ## OLED
 Sehr flexibel
+
 - Pixel können direkt angesteuert werden.
 - Sehr dünn 
-- 
+
 
 QLED ist nicht OLED
 QLED ist heller  
