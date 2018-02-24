@@ -253,12 +253,14 @@ $ kubeadm init --pod-network-cidr 10.244.0.0/16
 kubeadm join --token e77f3a.932b35eb750281f7 10.132.0.17:6443 --discovery-token-ca-cert-hash sha256:b14f9e2cc922910b80015e8e1a78bc2ff095fda89d63d02a64f13ebf91b22ea4
 ```
 Hierbei muss bei der Ausgabe der KubeADM Befehl kopiert werden.
+Dieser wird nachher noch benötigt um auf allen Nodes auszuführen.
 
 ```bash
 $ kubeadm join --token e77f3a.932b35eb750281f7 10.132.0.17:6443 --discovery-token-ca-cert-hash sha256:b14f9e2cc922910b80015e8e1a78bc2ff095fda89d63d02a64f13ebf91b22ea4
 ```
 
 Danach wird die Kubernetes Konfig mit dem User cephd in dessen .kube Ordner kopiert.
+Diese kann danach vom Jumphost per scp ab s1-node1 kopiert werden.
 ```bash
 $ mkdir -p $HOME/.kube
 $ sudo cp -i /etc/kubernetes/admin.conf HOME/.kube/config
