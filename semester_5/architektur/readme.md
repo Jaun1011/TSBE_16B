@@ -392,20 +392,24 @@ s1-node3  europe-west1-d  n1-standard-2               10.132.0.15  35.195.143.14
 ```
 	
 ## Testing
+Tests konnten nur bedingt ausgeführt werden.
+Das Guestbook konnte per external IP aufgerufen werden. Jedoch hatte die Applikation probleme auf die Datenbank zuzugreiffen. 
+Bei einem erneuten start des Kubernetes Clusters rauchte jedoch die ganze Umgebung ab.
+
+Bei Lars konnte ich  jedoch nachfollziehen, dass wenn das Volume abgeschalten ist, die Einträge im Guestbook gelöscht werden.
+
+Bei einem Restart der Pods sind die Einträge jedoch noch vorhanden.
+
 ## Schwierigkeiten
-Die meisten Schwierigkeiten hatte ich mit dem Ceph Setup. Ich musste hierbei alle VMs von neuem bauen, 
-da mein Setup die Nodes nicht hinzfügen konnte.
+Die meisten Schwierigkeiten hatte ich mit dem Ceph Setup. Ich musste hierbei alle VMs von neuem bauen, da mein Setup die Nodes nicht hinzfügen konnte.
 
 ## Vorteile
 Die Vorteile von einem System wie Kubernetes sind, dass sich um Konfiguration auf einzelnen Servern sowie deren Wartung keine Gedanken mehr gemacht werden müssen.
 Es ist lediglich noch der Kubernetes Kluster vorhanden welcher gewartet werden muss.
 Dies erleichtert die Arbeit für den Betrieb vehement.
 
-
 ## Lessons learend
-
 Was ich vor allem gelernt habe, ist dass hinter dem Setup von Kubernetes ziemlich viel Magic passiert.
 Ohne Dokumentation würde ich wahrscheinlich nur mit emensem Zeitaufwand ein solches Setup erarbeiten können.
 
 Trotz allem war es sehr interresant mit den einzelnen Komponenten in berührung zu kommen.
-
