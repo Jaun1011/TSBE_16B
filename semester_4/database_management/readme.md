@@ -261,6 +261,83 @@ grant connect, resource to WEBSHOP;
 alter user WEBSHOP quota unlimited on WEBSHOP_DATA;
 ```
 
+# DB 2
+## Grundbegriffe
+### Datafiles
+Sind alle Daten drinnen. Datenfiles sind Binärdateien.
 
-## Views
-Oracle arbeitet mit 
+
+
+### System Change Number
+Diese Nummer wird geführt und incremenentiert wenn das System neu gestartet wurde.
+Wenn das System crasht wird die nummer nicht neu gesetzt. So kann nachfollzogen werden, ob das System regulär neu gestartet wurde oder nicht.
+
+
+### Redo Log Files
+Sind ebenfalls Binärfiles. Hier werden alle Transaktionen hineingechrieben.
+Falls die Instanz Crasht ist alles weg was im Memory geschrieben ist.
+ 
+Beim Start werden diese gelesen und es wird ein checkup mit dem System startcounter gemacht. 
+Falls dieser Tiefer als der Redo Log level ist werden diese zur wiederherstellung benutzt.
+
+Redo Logs werden meist mehrfach angelegt.
+
+### Flashback
+Speichert noch mehr als Redo Logs
+Kann auch mit upgrades umgehen.
+Ist jedoch nur in der Enterprise Version brauchbar
+
+
+### Controll File
+Ist ebenfalls Binär
+Das File sollte immer doppelt vorhanden sein.
+
+### Parameter File
+Ist ein Asci File
+
+`{oracle_sid}.ora` 
+Parameter können z.B die default Memory grösse sein.
+Hier könnnen alle default Parameter gesetzt werden.
+
+
+- Auditing File
+- Optimizer
+
+### Trace Files
+Sind Ascii Files
+
+Stehen alle Informationen über die Datenbank und ihren Status drinnen.
+WIrd häufig für Service Requests an Oracle benötigt.
+
+### Alert Log
+Ascii File
+Neue Version im XML  Format 
+
+Fehlermeldungen fangen meist immer mit `ora-` an.
+`oerr ora  1119` zeigt den Fehlerstatus an 
+
+### Password Files
+Ist wieder ein Binary File
+Beinhaltet Passworöter von Superuser
+
+
+## Instanzen
+PGA - Programm Global Area
+Bereich in welchem das Programm läuft
+
+
+### SGA - System Global Area
+Ist ein bereich im memory 
+Hier sind diverse Parameter geladen.
+
+-> Buffer Cache
+    Bei einer Abfrage werden Anfragen im Buffercache für eine bestimmte Zeit zwischengespeichert.
+
+
+
+
+Background Prozesse
+
+
+
+Server Processes
