@@ -15,7 +15,7 @@ In einem zweiten Lauf soll noch ein Lichtsensor angeschlossen werden.
 
 ### Resultat
 #### HW
-
+![](res/tag_1.jpg)
 #### Code
 Der Code zum Auftrag findet man [hier](src/led_temp_driver.c)
 
@@ -24,8 +24,6 @@ Speziell ist diese Zeile. Mit der Methode analogRead kann ein analoger Wert vom 
 ``` java
 int  voltage = analogRead(sensorPin);
 ```
-
-
 
 ## Tag 2
 ### Auftrag
@@ -42,12 +40,14 @@ Dazu muss ein Temparatursensor angeschlossen werden.
 Das Relais war bei mir leider bereits in der Verpackung defekt. Hierbei wurde längere Zeit nach dem Problem gesucht.
 Da kein Relais mehr vorhanden war, wurde das Relais durch Logik ersetzt.
 Dank Lars Bättig konnte der Aufbau mit dem Relais ebenfalls noch getestet werden.
-
+![](res/tag_2.jpg)
 
 ## Tag 3
 ### Auftrag
 Heute sollte ein Arduino Uno mit einem Arduino Nano angesteuert werden.
-Der Auftrag war, dass über das Arduino Uno mit einem Sensor, Werte ausliest
+Der Auftrag war, dass über das Arduino Uno mit einen Temparatur Sensor Werte asgelesen werden.
+Diese sollen anschliessend an das Arduino Nano übertragen werden, welches das Led zum leuchten bringt.
+
 ### Bauteile
 
 - Arduino Uno
@@ -62,3 +62,4 @@ Hierbei muss darauf geachtet werden, dass die Verbingung übers Kreuz gemacht wi
 Anschliessend wurden das Arduino Uno [Master](src/master.c) und das Arduino Nano [Slave](src/slave.c) programmiert.
 
 Danach versuchte ich noch eine Datenübertragung per Funk zum laufen zu bekommen.
+![](res/tag_3.jpeg)
