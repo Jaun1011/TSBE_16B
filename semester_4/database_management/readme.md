@@ -275,8 +275,8 @@ Wenn das System crasht wird die nummer nicht neu gesetzt. So kann nachfollzogen 
 
 ### Redo Log Files
 Sind ebenfalls Binärfiles. Hier werden alle Transaktionen hineingechrieben.
-Falls die Instanz Crasht ist alles weg was im Memory geschrieben ist.
- 
+Falls die Instanz crascht ist alles weg was im Memory geschrieben ist.
+
 Beim Start werden diese gelesen und es wird ein checkup mit dem System startcounter gemacht. 
 Falls dieser Tiefer als der Redo Log level ist werden diese zur wiederherstellung benutzt.
 
@@ -307,7 +307,7 @@ Hier könnnen alle default Parameter gesetzt werden.
 Sind Ascii Files
 
 Stehen alle Informationen über die Datenbank und ihren Status drinnen.
-WIrd häufig für Service Requests an Oracle benötigt.
+Wird häufig für Service Requests an Oracle benötigt.
 
 ### Alert Log
 Ascii File
@@ -318,7 +318,7 @@ Fehlermeldungen fangen meist immer mit `ora-` an.
 
 ### Password Files
 Ist wieder ein Binary File
-Beinhaltet Passworöter von Superuser
+Beinhaltet Passwörter von Superuser
 
 
 ## Instanzen
@@ -338,6 +338,84 @@ Hier sind diverse Parameter geladen.
 
 Background Prozesse
 
-
-
 Server Processes
+
+## Oracle Net
+Der Aufbau einer Verbindung wird via Listener gemacht.
+
+
+
+### tnsping
+
+Ping auf Oracle Basis über Listener
+
+### tnsnames
+
+Remotezugriff über Remote
+
+### ezconnect
+
+- Hostname des Listeners
+- Post
+- Service Name
+
+
+
+tns.names.ora file muss ein Eintrag gemacht werden.
+
+### FRA
+
+Der FRA sollte nie 100 % des Platzes zur Verfügung gestellt werden. 
+Bei zum Beispiel 100 Gb sollte der FRA etwa 20 GB Platz gegeben werden.
+
+## Backup
+
+Offline Backups müssen konsistent sein.
+
+Online Backups sind nicht konsistent. Deshalb muss auch das Transaktionlog mitgezogen werden.
+
+Bei Offline Backups sind alle Daten seit dem Backup verloren.
+
+RMAN recovery manager sollte primär für das Backup verwendet werden.
+ 
+# Security
+
+## Passwort Handhabung
+
+Die Komplexität des Passworts kann eingestellt werden.
+Jeder User hat ein eigenes Profil
+In Oracle gibt es 7 verschiedene Möglichkeiten, wie Passwörter eingeschränkt werden können.
+```sql
+select resource_name, limit
+from dba_profiles
+
+where 	profile			= 'DEFAULT' 
+and 	resource_type 	= 'PASSWORD'
+
+order by 1;
+```
+
+
+
+# Monitoring
+Failed Login Atemts
+Patching: 
+
+# Auditing
+Es können auch Bind Variablen angezeigt werden.
+
+Um ein Auditing zu machen kann das Package `dbms_fga`
+
+Oraclce bietet zum Auditieren folgende Operationen an:
+
+`DBA_STMT_AUDIT_OBTS`
+`DBA_PRIV_AUDIT_OBTS`
+`DBA_OBJ_AUDIT_OBTS`
+
+## Synonyme erstellen
+
+```sql
+create synonym web_ro_usr.artikel for webshop.artikel;
+```
+
+
