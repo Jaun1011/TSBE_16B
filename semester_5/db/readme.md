@@ -291,6 +291,175 @@ LOGFILE=dp_imp_webshop1.log
 impdp parfile=imp.par
 
 ```
+
+## Security
+### Password
+Profile haben 7 unterschiedliche Möglichkeiten mit Passworten umzugehen:
+
+
+```sql
+SQL>select resource_name, limit
+from
+dba_profiles
+where profile='DEFAULT'
+and resource_type = 'PASSWORD'
+order by 1;
+RESOURCE_NAME
+------------------------------
+FAILED_LOGIN_ATTEMPTS
+PASSWORD_GRACE_TIME
+PASSWORD_LIFE_TIME
+PASSWORD_LOCK_TIME
+PASSWORD_REUSE_MAX
+PASSWORD_REUSE_TIME
+PASSWORD_VERIFY_FUNCTION
+7 rows selected.
+```
+
+#### Params
+
+*FAILED_LOGIN_ATTEMTS*
+Steuert nach wie vielen Fehlversuchen das Account gelockt wird
+
+*PASSWORD_GRACE_TIME*
+Spezifiziert in Tagen wie lange der User vor Ablaufen des Passworts gewarnt wird
+Logins mit dem alten Passwort sind in dieser Zeit möglich
+
+*PASSWORD_LIFE_TIME*
+Steuert in Tagen wie lange ein Passwort gültig ist
+Nach Ablauf der Life Time muss der Benutzer beim nächsten Login das Passwort ändern
+
+*PASSWORD_LOCK_TIME*
+Steuert wie lange in Tagen ein User gesperrt bleibt nachdem das Account wegen Überschreiten der FAILED_LOGIN_ATTEMTS gesperrt wurde
+
+*PASSWORD_REUSE_MAX*
+Steuert wie oft ein Passwort gewechselt werden muss, bis ein bereits verwendetes Passwort wieder
+verwendet werden darf
+
+*PASSWORD_REUSE_TIME*
+Steuert wie lange in Tagen ein Passwort nicht wieder verwendet werden darf
+
+*PASSWORD_VERIFY_FUNCTION*
+Es kann eine PL/SQL Funktion angegeben werden, welche das Passwort prüft
+In dieser Funktion können Regeln hinterlegt werden, wie ein Passwort auszusehen hat
+z.B.: PW Länge, erlaubte Sonderzeichen, Zahlen, Gross- und Kleinschreibung etc.
+Es gibt eine Beispielfunktion, die nach den Richtlinien der Firma angepasst werden kann `${ORACLE_HOME}/rdbms/admin/utlpwdmg.sql`
+
+### Auditing
+ORACLE bietet eine Vielzahl von Möglichkeiten an die Datenbank zu überwachen
+
+Bei ORACLE 12c wurde ein komplett neues-, sicheres Auditing System eingeführt (Unified Auditing)
+
+Bis ORACLE 12c war es möglich die gesammelten Auditing Daten manuell zu verändern, falls man über die nötigen Berechtigungen verfügte
+
+Ab 12c mit Unified Auditing ist dies nicht mehr möglch Unified Auditing überwacht sobald es eingeschalten ist auch Backup- oder Datenexporte und Importe Unified Auditing kann bei 12c aus Kompatibilitätsgründen parallel zum herkömmlichen Auditing verwendet werden
+Die gesammelten Auditing Daten können wahlweise in der Datenbank oder im Filesystem abgelegt werden
+
+Es gibt unterschiedlich granulare Einstellungen des Auditings DB, EXTENDED sammelt auch die Werte der Bindvariablen
+
+Mit Unified Auditing (seit 12c) lassen sich noch weit mehr
+Operationen wie z.B. Backup, Importe und Exporte etc. auditieren
+Weiterhin bietet ORACLE die Möglichkeit von **Fine Grade
+Auditing** **(FGA)**
+Mit FGA lassen sich Sachen auditieren wie:
+
+Zugriff auf die Konten der Bank XY wenn der Kontostand > 1’000’000 ist
+Schreibende- und lesende Zugriffe können auditiert werden
+Zugriffe auf Tabellen und Views können mit FGA auditiert werden
+Die Definition der FGA Policies wird mit dem Package dbms_fga
+gemacht
+
+
+
+
+### Zugriff auf Schemen
+
+
+Eine Applikation bzw. deren User sollten NIE als Schemaowner auf
+die Datenbank zugreifen
+Applikationen oder Benutzer sollten immer mit dedizierten, eigenen
+Benutzern auf die Datenbank zugreifen
+
+Diese Benutzer erhalten dann die nötigen Berechtigungen, damit sie ihre Arbeit
+machen können
+
+Dieses Konzept setzt sich immer mehr durch, es gibt jedoch immer
+noch Applikationen, die sich direkt als Schemaowner auf die
+Datenbank verbinden
+
+Es gibt keinen Grund, warum man sich im normalen Betrieb als
+Schemaowner verbinden muss.
+
+Alles ist mit Berechtigungen und ggf. mit Synonymen lösbar
+
+Nahteile beim Einloggen als Schemaowner sind:
+- Bekanntere Passwörter
+- Schema kann immer durch App manipuliert werden
+- Zugriff von anderen Tools wie SQL Plus -> Volle berechtigung
+
+### Grants
+
+Data Dictionary Views:
+
+- Berechtigungen auf Objekte: DBA_TAB_PRIVS
+- Berechtigungen auf Rollen: DBA_ROLE_PRIVS
+- Systemprivilegien: DBA_SYS_PRIVS
+
+
+
+
+#### Privilegien
+Welche Objekt Privilegien gibt es?
+
+```sql
+SQL> select distinct privilege from dba_tab_privs order by 1;
+PRIVILEGE
+----------------------------------------
+ALTER
+DEBUG
+DELETE
+DEQUEUE
+EXECUTE
+FLASHBACK
+INDEX
+INSERT
+ON COMMIT REFRESH
+QUERY REWRITE
+READ
+REFERENCES
+SELECT
+UPDATE
+USE
+WRITE
+16 rows selected
+```
+
+
+Welche System Privilegien gibt es?
+```sql
+SQL> select distinct privilege from dba_sys_privs order by 1;
+PRIVILEGE
+----------------------------------------
+ADMINISTER ANY SQL TUNING SET
+ADMINISTER DATABASE TRIGGER
+ADMINISTER RESOURCE MANAGER
+ADMINISTER SQL MANAGEMENT OBJECT
+ADMINISTER SQL TUNING SET
+ADVISOR
+ALTER ANY ASSEMBLY
+...
+...
+...
+UNLIMITED TABLESPACE
+UPDATE ANY CUBE
+UPDATE ANY CUBE BUILD PROCESS
+UPDATE ANY CUBE DIMENSION
+UPDATE ANY TABLE
+202 rows selected.
+```
+
+
+
 * Generell System Tablespace kann man nicht offline nehmen (unmounten)
   * Complete / incomplete Recovery und Befehle dazu
   * PIT Recoverys (Voraussetzungen dafür)
@@ -310,4 +479,4 @@ impdp parfile=imp.par
   * Welche privilegien sollte man nicht vergeben?
   * Rollen (Konzept)
 
-
+	
