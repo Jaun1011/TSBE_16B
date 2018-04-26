@@ -165,9 +165,132 @@ werden
 
 
 ## Datapump
+- Die neuen Export / Import Utilities werden «Datapump» genannt
+- expdp / impdp
+- Datapump wurde mit ORACLE 10g eingeführt
 
 
+```sql
+# DD View
+DBA_DIRECTORIES
+create or replace directory datapump as '/u00/app/oracle/admin/DAH11203/dpdump';
+```
 
+
+```sql
+# Hilfe aufrufen von Oracle Tools
+expdp help=yes
+impdp help=yes
+```
+
+Command Datapump -> schwer zu lesen
+```sql
+expdp USERID=system/manager FULL=Y PARALLEL=8
+FLASHBACK_TIME=sysdate JOB_NAME=dp_fullexp
+DIRECTORY=DATA_PUMP_DIR DUMPFILE=dp_fullexp_%U.dmp
+LOGFILE=dp_fullexp.log
+```
+
+Desshalb noch mit Params
+Hier das File `exp.par`
+```sql
+USERID="/ as sysdba"
+FULL=Y
+FLASHBACK_TIME=sysdate
+JOB_NAME=dp_fullexp1
+DIRECTORY=dpdump
+DUMPFILE=dp_fullexp_%U.dmp
+LOGFILE=dp_fullexp.log
+```
+
+Aufruf des Files
+```
+expdp parfile=exp.par
+```
+
+## Datapump Parameters
+
+- Die vollständige Liste der Parameter ist in der Dokumentation
+ersichtlich
+
+Was oft als Basis verwendet wird:
+
+
+```
+USERID="/ as sysdba"
+FULL=Y
+PARALLEL=4
+FLASHBACK_TIME=sysdate
+JOB_NAME=dp_fullexp
+DIRECTORY=dpdump
+DUMPFILE=dp_fullexp_%U.dmp
+LOGFILE=dp_fullexp.log
+
+```
+
+
+USERID 
+User mit welchem man sich in die DB verbindet 
+`[Username]/[Passwort]@tns_name system/manager 
+“/ as sysdba”
+system/manager@xe112.tsbe.ch`
+
+FULL 
+Fullexport der gesamten DB Wird “N” angegeben, muss eine
+sonsNge OpNon wie z.B. ein Schema
+oder eine Tabelle angegeben werden 
+`Y oder N`
+
+FLASHBACK_TIME 
+GaranNert einen konsistenten Export.WichNger Parameter! sysdate
+
+DIRECTORY 
+Name des DB Directories, wohin der
+Export gemacht werden soll Name aus dba_directories
+
+PARALLEL 
+Parallelität 
+8
+
+DUMPFILE 
+Name des Dumpfiles.
+Die Variable %U gibt an, dass mehrere
+Files erstellt werden können. z.B. wenn
+Parallel > 1 eingestellt ist Beliebiger Name
+Ggf. Mit %U
+
+### Full Export
+
+Erstellen eines Full Exports der Datenbank
+
+```sql
+create or replace directory dpdump as '/u01/app/
+oracle/admin/XE112/dmp';
+
+expdp USERID=system/manager FULL=Y
+FLASHBACK_TIME=sysdate DIRECTORY=dpdump
+DUMPFILE=dp_fullexp.dmp LOGFILE=dp_fullexp.log
+
+```
+Importieren des Schemas webshop in die gleiche Datenbank unter dem Namen webshop_copy
+Wahlweise mit Parameterfile oder direct via CLI
+
+```sql
+Parameterfile:
+USERID="/ as sysdba"
+FULL=N
+PARALLEL=1
+JOB_NAME=db_imp_webshop
+DIRECTORY=dpdump
+REMAP_SCHEMA=webshop:webshop_copy
+SCHEMAS=WEBSHOP
+EXCLUDE=statistics
+DUMPFILE=dp_fullexp.dmp
+LOGFILE=dp_imp_webshop1.log
+
+impdp parfile=imp.par
+
+```
 * Generell System Tablespace kann man nicht offline nehmen (unmounten)
   * Complete / incomplete Recovery und Befehle dazu
   * PIT Recoverys (Voraussetzungen dafür)
