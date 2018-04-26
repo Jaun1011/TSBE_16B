@@ -42,6 +42,12 @@ Es gibt zwei verschiedene Arten von Recovery’s:
 
 
 ### Beispiel Recovery / Restore
+Backup’s machen ist das Eine, man muss sie auch restoren können
+Restore von Online Backups wird in 2 Schritten gemacht:
+
+1) Restore
+2) Recovery
+
 ```sql
 SQL> startup force mount;
 RMAN> run {
@@ -60,6 +66,107 @@ RMAN> run {
 		release channel ch4;
 }
 ```
+## Complete Recovery
+
+Sind Backups vorhanden?
+
+```sql
+RMAN> list backup of database;
+oder
+RMAN> list backup of datafile 4;
+oder
+RMAN> list backup of datafile '/u02/oradata/XE112/users01XE112.dbf';
+
+
+# Zeitpunkt merken
+
+SQL> alter session set nls_date_format='dd.mm.yyyy hh24:mi:ss';
+SQL> select sysdate from dual;
+
+```
+
+Beim Löschen von Datenbankfiles tritt meistens kein Fehler auf, da die DB im Speicher repliziert wurde.
+
+### Alert Log
+Fehler forcieren durch Schreiben des aktuellen Memory’s in die
+Datenfiles und Controlfiles
+
+
+```sql
+SQL> alter system checkpoint;
+alter system checkpoint
+*
+ERROR at line 1:
+ORA-03113: end-of-file on communication channel
+Process ID: 23510
+Session ID: 133 Serial number: 73
+
+# Alertlog konsultieren und schauen was passiert ist
+
+$ taa
+$ via
+```
+Complete Restore / Recovery durchführen
+Sicherstellen, dass die vorher erstellte Tabelle vorhanden ist
+
+Zu beachten:
+- Das Backup wurde gemacht bevor die Tabelle erstellt wurde
+- Die Tabelle wird durch Nachfahren der Redo Log’s erstellt 
+
+```sql
+SQL> startup mount;
+$ rmanch
+RMAN> restore datafile 4;
+RMAN> recover datafile 4;
+SQL> alter database open;
+SQL> select * from test_users;
+SQL> startup mount;
+$ rmanch
+RMAN> restore tablespace USERS;
+RMAN> recover tablespace USERS;
+SQL> alter database open;
+SQL> select * from test_users;
+```
+
+## PIT (Point in Time Recovery / Restore)
+
+Point In Time (PIT) Restore / Recovery auf den Zeitpunkt
+durchführen, als die in Übung 3 erstellte Tabelle noch nicht
+vorhanden war.  Kontrollieren ob die Tabelle vorhanden ist
+
+
+
+```sql
+SQL> startup force mount;
+$ rmanch
+run {
+	set until time "to_date('14_05_2016 18:00:00', 'DD_MM_YYYY HH24:MI:SS')";
+	restore database;
+	recover database;
+}
+SQL> alter database open resetlogs;
+SQL> select table_name from dba_tables where table_name = 'TEST_USERS';
+```
+# Export Import
+## Verwendung
+- Kopieren von einzelnen Schemen- oder Teilen davon
+- "saubere" Upgrades von Datenbanken ohne alte Zöpfe von früheren Migrationen mitzuschleppen
+	- "Full Imports" möglichst vermeiden, nur die Schemen importieren, die benötigt
+werden
+- Weitergeben von Teilen der Datenbank an Drittpersonen wie z.B. SW Entwicklungsfirmen
+- Reorganisieren von Tabellen
+## SYS Objekt
+-> sys Objekte werden nicht exportiert und können auch nicht importiert werden
+
+- Anders als bei RMAN erwartet das Import Tool eine laufende Datenbank
+- Eine laufende DB bedeutet, dass mindestens alle sys Objekte vorhanden sind
+- Dies ist konzeptionell korrekt, muss aber berücksichtigt werden
+- Erstellt man keine Objekte unter dem Schema sys, was man eh nicht machen sollte, ist das kein Problem
+
+
+## Datapump
+
+
 
 * Generell System Tablespace kann man nicht offline nehmen (unmounten)
   * Complete / incomplete Recovery und Befehle dazu
