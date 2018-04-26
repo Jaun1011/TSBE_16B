@@ -458,7 +458,13 @@ UPDATE ANY TABLE
 202 rows selected.
 ```
 
+### Rollen
 
+create role webshop_ro;
+grant select on webshop.artikel to webshop_ro;
+grant select on webshop.kunden to webshop_ro;
+grant select on webshop.rechnungen to webshop_ro;
+grant select on webshop.rech_pos to webshop_ro;
 
 * Generell System Tablespace kann man nicht offline nehmen (unmounten)
   * Complete / incomplete Recovery und Befehle dazu
