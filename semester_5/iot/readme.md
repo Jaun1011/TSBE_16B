@@ -29,6 +29,7 @@ int  voltage = analogRead(sensorPin);
 ### Auftrag
 Heute sollte mit dem Arduino ein Heizregler nachgebaut werden.
 Dazu muss ein Temparatursensor angeschlossen werden.
+
 ### Bauteile
 - Arduino Uno
 - Relais
