@@ -120,8 +120,21 @@ Die Daten werden per einem Start und zwei Stoppbits signiert.
 |2      | Data Link Layer      |Zusammenfassung des Bitstroms in Mit CRC Checksumme sowie Sequenz und Zeitüberwachung |
 |1      | Physical Layer       |Kabel,Funk, Logisch 0 und 1|
 
-## IEEE 802 DataLink
+
+
+### IEEE 802 DataLink
 Laut dem Standart wird der DataLink Layer in ein 2A **MAC** Median Access Controll und ein 2B **LLC** Logical Link Controll Layer unterteilt
+
+Der Physical Layer beinhaltet 
+- **MII** (Medium Independent Interface)
+
+- **PCS** Physical Coding Sublayer, 
+- **PMA** Pysical Media Attachment und ,
+- **PMD** Physical Media Dependent
+
+- **MDI** (Medium Dependent Interface)
+
+
 
 ### Vorteile sind:
 
@@ -138,8 +151,17 @@ Transportschicht          ->           TH|  |  |   |      |
 Vermittlungsschicht       ->        NH|  |  |  |   |      |
 Sicherungsschicht         ->    DLH|  |  |  |  |   |      |DLT
 Bitübertragungsschicht    ->   |   |  |  |  |  |   |      |
-
 ```
+
+### Internetworking Komponenten
+- Gateways  7 - 4
+- Router    3
+- Switches  2
+- Repeater  1
+
+
+
+
 ## Verbindungsorientierte Dienste
 Alle Daten halten den vorgegebenen Weg ein.
 Die Reihenfolge der Daten wird eingehalten.
@@ -164,3 +186,4 @@ Benötigt immer  einen Monitor (kann arbeitsstation sein)
 ## IEEE 802
 IEEE ist ein Standart zur Integration von verschiedenen Systemen
 
+## FHSS (Frequency Hopping Spread Spectrum)
