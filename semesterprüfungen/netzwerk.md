@@ -187,3 +187,37 @@ Benötigt immer  einen Monitor (kann arbeitsstation sein)
 IEEE ist ein Standart zur Integration von verschiedenen Systemen
 
 ## FHSS (Frequency Hopping Spread Spectrum)
+
+# Gängige Begriffe
+
+|Abkürzung	|	Begriff	|	Erklärung	|
+|---|---|---|
+|	ISOC	|	Internet Society	|	Ist für die weiterent wicklung der Internet Infrastruktur Zuständig	|
+|	IAB	|	Internet Architecture Board	|	Komitee zur unterstützung der ISOC. Ist verantworktlich für die Weiterentwciicklung es internets	|
+|	ICANN	|	Internet Corporation for Assinged Names and Numbers	|	Verteilt IP Adressen auf der Welt	|
+|	RIP	|	Reginal Internet Registers	|	Addressbereiche Verwaltung	|
+|	LIR	|	Local Internet Regisgers	|		|
+|	NIR	|	National Internet Registers	|		|
+|	LSR	|	Link Status Routing	|		|
+|	LSA	|	Link Status Algorythmus	|		|
+|	DVA	|	Distance Vector Algoriythm	|	Jede Route wird nach einigen Kriterien klassifiziert. Aus allen Routen wird schliesslich die optimalste Route gewählt.	|
+|		|		|	Die Methode bewährt sich vor allem bei Weit entfernten Zielen.	|
+|	DVR	|	Distance Vector Routing	|	Routing Tabellen werden mit dirrekten Nachbar Routren ausgetauscht.	|
+|	RIP	|	Routing Information Protocol	|	RIP ist ein DVA. Wird durch die Beschränkung auf 15 Hops primär in Lokalen netzen verwendet. Routing Tables werden alle 30 Sekunden ausgetauscht.	|
+|	ARP	|		|		|
+
+## Routing
+Kriterien für Routingverbingung
+- Verbindungskosten
+- Notwendige Bandbreite
+- Ziel Adresse
+- Subnetz
+- Verbindungsart
+- Verbindungsinfomrationen
+- Bekannte Nezwektadresse
+
+
+VLAN - Virtual LAN
+
+Zwischen VLANS wird geroutet
+Zwischen Geräten wird geswitcht

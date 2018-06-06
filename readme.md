@@ -14,3 +14,9 @@ In diesem Projekt befinden sich Dokumentationen und Schulprojekte für die TSBE.
 1) [Multimedia](semester_5/multimedia/readme.md)
 2) [Architektur](semester_5/architektur/readme.md)
 3) [Internet of Things](semester_5/iot/readme.md)
+
+
+## Semesterprüfungen
+1) [Netzwerk](semesterprüfungen/netzwerk.md)
+2) [Security](semesterprüfungen/security.md)
+
